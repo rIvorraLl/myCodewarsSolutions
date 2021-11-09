@@ -41,7 +41,27 @@ def spin_words(sentence):
             reversedWords += word + " "
     return reversedWords.strip()
 ```
+**5 kyu**
 
+- Rotate an array matrix
+
+```python
+def rotate(matrix, direction): 
+    if direction == "clockwise":
+        rotateClockwise = list(zip(*matrix[::-1]))
+        resultClock = []
+        for i in rotateClockwise:
+            resultClock.append(list(i))
+        return resultClock
+            
+    else:
+        rotateAntiClockwise = list(reversed(list(zip(*matrix))))
+        resultAntiClock = []
+        for j in rotateAntiClockwise:
+            resultAntiClock.append(list(j))
+        return resultAntiClock
+
+```
 
     
 
