@@ -1,5 +1,5 @@
 # myCodewarsSolutions
-*Not exactly brilliant solutions to some Codewars' kata. Use at your own risk.*
+*My solutions to some Codewars' kata. Use at your own risk.*
 
 **8 kyu**
 
@@ -55,6 +55,27 @@ def how_much_i_love_you(nb_petals):
 
 ```
 
+- Will you make it?
+
+```python
+def zero_fuel(distance_to_pump, mpg, fuel_left):
+    return fuel_left * mpg >= distance_to_pump
+
+```
+**7 kyu**
+
+- Split in parts
+```python
+def split_in_parts(s, part_length): 
+    splitted = s[0]
+    for i in range(1, len(s)):
+        if i % part_length == 0:
+            splitted += " " + s[i]
+        else:
+            splitted += s[i]
+    return splitted
+
+```
 **6 kyu**
 
 - Stop gninnipS My sdroW!
