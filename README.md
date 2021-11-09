@@ -26,6 +26,13 @@ def hoop_count(n):
     return "Great, now move on to tricks" if n>9 else "Keep at it until you get it"
 
 ```
+- Can we divide it?
+
+```python
+def is_divide_by(number, a, b):
+    return number % a == 0 and number % b == 0
+
+```
 **6 kyu**
 
 - Stop gninnipS My sdroW!
