@@ -33,6 +33,28 @@ def is_divide_by(number, a, b):
     return number % a == 0 and number % b == 0
 
 ```
+- DNA to RNA conversion
+
+```python
+def dna_to_rna(dna):
+    rna =""
+    for i in dna:
+        if i == "T":
+            rna += "U"
+        else:
+            rna += i
+    return rna
+
+```
+- I love you, a little , a lot, passionately ... not at all
+
+```python
+def how_much_i_love_you(nb_petals):
+    flower = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
+    return flower[nb_petals - 1] if nb_petals <= 6 else flower[nb_petals%6-1]
+
+```
+
 **6 kyu**
 
 - Stop gninnipS My sdroW!
