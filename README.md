@@ -62,6 +62,20 @@ def zero_fuel(distance_to_pump, mpg, fuel_left):
     return fuel_left * mpg >= distance_to_pump
 
 ```
+- Squash the bugs
+
+```python
+def find_longest(string):
+    spl = string.split(" ")
+    longest = 0
+    i=0
+    while i < len(spl):
+        if len(spl[i]) > longest:
+            longest = len(spl[i])
+        i += 1
+    return longest
+
+```
 **7 kyu**
 
 - Split in parts
