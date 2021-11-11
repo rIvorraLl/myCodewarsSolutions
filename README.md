@@ -76,6 +76,16 @@ def find_longest(string):
     return longest
 
 ```
+- Calculate average
+
+```python
+def find_average(numbers):
+    counter = 0
+    for i in numbers:
+        counter += i
+    return counter / len(numbers)
+
+``` 
 **7 kyu**
 
 - Split in parts
