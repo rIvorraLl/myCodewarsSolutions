@@ -137,6 +137,22 @@ def solution(s):
         returnString += "_"
     return returnString.split()
 ```
+- Bit counting
+
+```python
+def count_bits(n):
+    binary = ""
+    while n // 2 > 0:
+        binary += str(n % 2)
+        n = n // 2
+    binary += str(n % 2)
+    counter = 0
+    for i in binary:
+        if i == "1":
+            counter += 1
+    return counter
+
+```
 
 **5 kyu**
 
