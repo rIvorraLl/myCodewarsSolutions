@@ -100,6 +100,15 @@ def split_in_parts(s, part_length):
     return splitted
 
 ```
+- You're a square!
+
+```python
+def is_square(n):
+    if n < 0:
+        return False
+    return int(n ** 0.5) ** 2 == n
+
+```
 **6 kyu**
 
 - Stop gninnipS My sdroW!
