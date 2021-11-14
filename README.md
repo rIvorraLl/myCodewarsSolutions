@@ -115,6 +115,20 @@ def spin_words(sentence):
             reversedWords += word + " "
     return reversedWords.strip()
 ```
+- Split string
+
+```python
+def solution(s):
+    returnString = ""
+    for i in range(0, len(s)):
+        if i % 2 == 0:
+            returnString += " "
+        returnString += s[i]
+    if len(s) % 2 != 0:
+        returnString += "_"
+    return returnString.split()
+```
+
 **5 kyu**
 
 - Rotate an array matrix
