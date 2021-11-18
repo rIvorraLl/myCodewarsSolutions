@@ -153,7 +153,17 @@ def count_bits(n):
     return counter
 
 ```
+- Detecting pangram
 
+```python
+def is_pangram(s):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    for i in alphabet:
+        if i not in s.upper():
+            return False
+    return True
+
+```
 **5 kyu**
 
 - Rotate an array matrix
