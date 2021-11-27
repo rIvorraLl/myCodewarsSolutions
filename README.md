@@ -116,6 +116,21 @@ def get_decimal(n):
     return float(decimal)
 
 ```
+- Reverse a Number
+
+```python
+def reverse_number(n):
+    n = str(n)
+    strNum = ""
+    if n[0] == "-":
+        for i in n[1:]:
+            strNum = i + strNum
+        strNum = "-" + strNum
+        return int(strNum)
+    reversed = n[::-1]
+    return int(reversed)
+
+```
 
 **8 kyu**
 
