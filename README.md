@@ -1,6 +1,122 @@
 # myCodewarsSolutions
 *My solutions to some Codewars' kata. Use at your own risk.*
 
+**5 kyu**
+
+- Rotate an array matrix
+
+```python
+def rotate(matrix, direction): 
+    if direction == "clockwise":
+        rotateClockwise = list(zip(*matrix[::-1]))
+        resultClock = []
+        for i in rotateClockwise:
+            resultClock.append(list(i))
+        return resultClock
+            
+    else:
+        rotateAntiClockwise = list(reversed(list(zip(*matrix))))
+        resultAntiClock = []
+        for j in rotateAntiClockwise:
+            resultAntiClock.append(list(j))
+        return resultAntiClock
+
+```
+**6 kyu**
+
+- Stop gninnipS My sdroW!
+
+```python
+def spin_words(sentence):
+    listSentence = sentence.split()
+    reversedWords = ""
+    for word in listSentence:
+        if len(word) > 4:
+            reversedWords += word[::-1] + " "
+        else:
+            reversedWords += word + " "
+    return reversedWords.strip()
+```
+- Split string
+
+```python
+def solution(s):
+    returnString = ""
+    for i in range(0, len(s)):
+        if i % 2 == 0:
+            returnString += " "
+        returnString += s[i]
+    if len(s) % 2 != 0:
+        returnString += "_"
+    return returnString.split()
+```
+- Bit counting
+
+```python
+def count_bits(n):
+    binary = ""
+    while n // 2 > 0:
+        binary += str(n % 2)
+        n = n // 2
+    binary += str(n % 2)
+    counter = 0
+    for i in binary:
+        if i == "1":
+            counter += 1
+    return counter
+
+```
+- Detecting pangram
+
+```python
+def is_pangram(s):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    for i in alphabet:
+        if i not in s.upper():
+            return False
+    return True
+
+```
+**7 kyu**
+
+- Split in parts
+```python
+def split_in_parts(s, part_length): 
+    splitted = s[0]
+    for i in range(1, len(s)):
+        if i % part_length == 0:
+            splitted += " " + s[i]
+        else:
+            splitted += s[i]
+    return splitted
+
+```
+- You're a square!
+
+```python
+def is_square(n):
+    if n < 0:
+        return False
+    return int(n ** 0.5) ** 2 == n
+
+```
+- Get decimal part of the given number
+
+```python
+def get_decimal(n): 
+    boolean = False
+    decimal = ""
+    if "." not in str(n):
+        return 0
+    for i in str(n):
+        if i == ".":
+            boolean = True
+        if boolean:
+            decimal += i
+    return float(decimal)
+
+```
+
 **8 kyu**
 
 - Difference of Volumes of Cuboids
@@ -85,107 +201,4 @@ def find_average(numbers):
         counter += i
     return counter / len(numbers)
 
-``` 
-**7 kyu**
-
-- Split in parts
-```python
-def split_in_parts(s, part_length): 
-    splitted = s[0]
-    for i in range(1, len(s)):
-        if i % part_length == 0:
-            splitted += " " + s[i]
-        else:
-            splitted += s[i]
-    return splitted
-
 ```
-- You're a square!
-
-```python
-def is_square(n):
-    if n < 0:
-        return False
-    return int(n ** 0.5) ** 2 == n
-
-```
-**6 kyu**
-
-- Stop gninnipS My sdroW!
-
-```python
-def spin_words(sentence):
-    listSentence = sentence.split()
-    reversedWords = ""
-    for word in listSentence:
-        if len(word) > 4:
-            reversedWords += word[::-1] + " "
-        else:
-            reversedWords += word + " "
-    return reversedWords.strip()
-```
-- Split string
-
-```python
-def solution(s):
-    returnString = ""
-    for i in range(0, len(s)):
-        if i % 2 == 0:
-            returnString += " "
-        returnString += s[i]
-    if len(s) % 2 != 0:
-        returnString += "_"
-    return returnString.split()
-```
-- Bit counting
-
-```python
-def count_bits(n):
-    binary = ""
-    while n // 2 > 0:
-        binary += str(n % 2)
-        n = n // 2
-    binary += str(n % 2)
-    counter = 0
-    for i in binary:
-        if i == "1":
-            counter += 1
-    return counter
-
-```
-- Detecting pangram
-
-```python
-def is_pangram(s):
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    for i in alphabet:
-        if i not in s.upper():
-            return False
-    return True
-
-```
-**5 kyu**
-
-- Rotate an array matrix
-
-```python
-def rotate(matrix, direction): 
-    if direction == "clockwise":
-        rotateClockwise = list(zip(*matrix[::-1]))
-        resultClock = []
-        for i in rotateClockwise:
-            resultClock.append(list(i))
-        return resultClock
-            
-    else:
-        rotateAntiClockwise = list(reversed(list(zip(*matrix))))
-        resultAntiClock = []
-        for j in rotateAntiClockwise:
-            resultAntiClock.append(list(j))
-        return resultAntiClock
-
-```
-
-    
-
-    
