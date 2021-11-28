@@ -131,7 +131,22 @@ def reverse_number(n):
     return int(reversed)
 
 ```
+- 16 + 18 = 214
 
+```python
+def add(num1, num2):
+    added = ""
+    num1 = str(num1)
+    num2 = str(num2)
+    if len(num1) > len(num2):
+        num2 = "0" * (len(num1) - len(num2)) + num2
+    elif len(num2) > len(num1):
+        num1 = "0" * (len(num2) - len(num1)) + num1
+    for i in range(len(num1)):
+        added += str(int(num1[i]) + int(num2[i]))
+    return int(added)
+
+```
 **8 kyu**
 
 - Difference of Volumes of Cuboids
