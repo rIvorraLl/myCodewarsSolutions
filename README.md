@@ -79,6 +79,21 @@ def is_pangram(s):
 ```
 **7 kyu**
 
+- Gauß needs help! (Sums of a lot of numbers).
+
+```python
+def f(n):
+    return None if type(n) != int or n <= 0 else n * (n + 1) /2
+
+```
+- String ends with?
+
+```python
+def solution(string, ending):
+    return True if ending == "" else string[-len(ending):] == ending
+
+```
+
 - Split in parts
 ```python
 def split_in_parts(s, part_length): 
