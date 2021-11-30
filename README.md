@@ -3,6 +3,32 @@
 
 **5 kyu**
 
+- RGB to Hex conversion
+
+```python
+def converter(a):
+    indexes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C" ,"D", "E", "F"]
+    hex1 = indexes[a // 16]
+    hex2 = indexes[int((a / 16) % 1 * 16)]
+    return str(hex1 + hex2)
+
+
+def rgb(r, g, b):
+    reListed = []
+    for i in (r, g, b):
+        if i < 0:
+            reListed += [0]
+        elif i > 255:
+            reListed += [255]
+        else:
+            reListed += [i]
+    hexed = ""
+    for i in reListed:
+        hexed += converter(i)
+    return hexed
+
+```
+
 - Rotate an array matrix
 
 ```python
