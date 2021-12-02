@@ -28,7 +28,6 @@ def rgb(r, g, b):
     return hexed
 
 ```
-
 - Rotate an array matrix
 
 ```python
@@ -62,6 +61,27 @@ def spin_words(sentence):
         else:
             reversedWords += word + " "
     return reversedWords.strip()
+
+```
+
+- Bleatrix Trotter (The Counting Sheep)
+
+```python
+def trotter(n):
+    nums = []
+    counter = 0
+    i = 1
+    while i < 100:
+        multiplied =  i * n
+        for j in str(multiplied):
+            if j not in nums:
+                nums += [j]
+                counter += 1
+            if counter == 10:
+                return multiplied
+        i += 1
+    return "INSOMNIA"
+
 ```
 - Split string
 
