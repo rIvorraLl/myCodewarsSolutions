@@ -123,6 +123,39 @@ def is_pangram(s):
     return True
 
 ```
+- Simple nearest prime
+
+```python
+def isPrime(n):
+    if n % 2 == 0 or n % 3 == 0 or n % 5 == 0:
+        return False
+    sqrroot = int(n ** 0.5)
+    for i in range(2, sqrroot):
+        if n % i == 0:
+            return False
+    return True
+def solve(n):
+    if n == 3 or n == 4:
+        return 3
+    low = n
+    high = n
+    boolean = True
+    while boolean:
+        if isPrime(low):
+            boolean = False
+        else:
+            low -= 1
+    while not boolean:
+        if isPrime(high):
+            boolean = True
+        else:
+            high += 1
+    if n - low > high - n:
+        return high
+    else:
+        return low
+
+```
 **7 kyu**
 
 - Gauß needs help! (Sums of a lot of numbers).
