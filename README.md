@@ -156,6 +156,25 @@ def solve(n):
         return low
 
 ```
+- Count the smiley faces!
+
+```python
+def count_smileys(arr):
+    eyes = ":;"
+    noses = "-~"
+    mouths = ")D"
+    counter = 0
+    for i in arr:
+        for j in range(len(i)):
+            if i[j] in eyes and len(i[j:]) >= 3:
+                if i[j+1] in noses and i[j+2] in mouths:
+                    counter += 1
+            elif i[j] in eyes and len(i[j:]) >= 2:
+                if i[j+1] in mouths:
+                    counter += 1
+    return counter
+
+```
 **7 kyu**
 
 - Gauß needs help! (Sums of a lot of numbers).
