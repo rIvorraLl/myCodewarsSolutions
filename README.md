@@ -241,6 +241,30 @@ def add(num1, num2):
     return int(added)
 
 ```
+- Bumps in the Road
+
+```python
+def bumps(road):
+    counter = 0
+    for i in road:
+        if i == "n":
+            counter += 1
+    return "Woohoo!" if counter < 16 else "Car Dead"
+
+```
+- Convert an array of strings to an array of numbers
+
+```python
+def to_float_array(arr): 
+    newArray = []
+    for i in range(len(arr)):
+        if "." in arr[i]:
+            newArray += [float(arr[i])]
+        else:
+            newArray += [int(arr[i])]
+    return newArray
+
+```
 **8 kyu**
 
 - Difference of Volumes of Cuboids
