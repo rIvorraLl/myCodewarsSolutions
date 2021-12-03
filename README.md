@@ -49,6 +49,13 @@ def rotate(matrix, direction):
 ```
 **6 kyu**
 
+- Are they the "same"?
+
+```python
+def comp(array1, array2):
+    return False if array1 == None or array2 == None else sorted([n * n for n in array1]) == sorted(array2)
+
+```
 - Stop gninnipS My sdroW!
 
 ```python
