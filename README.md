@@ -1,2 +1,2 @@
 # myCodewarsSolutions
-*My solutions to some Codewars' kata. Use at your own risk.*
+*Things I've been doing at [Codewars](https://www.codewars.com). Use at your own risk.*
