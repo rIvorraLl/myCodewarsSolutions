@@ -1,3 +1,22 @@
+**7 kyu**
+- Bumps in the Road
+
+```java
+public class BumpsTheRoad {
+  public static String bumps(final String road) {
+    int counter = 0;
+    for (int i = 0; i < road.length(); i++) {
+      if (road.charAt(i) == 'n') {
+        counter +=1;
+      }
+    }
+    if (counter > 15) {
+      return "Car Dead";
+    }
+    return "Woohoo!";
+  }
+  ```
+  
 **8 kyu**
 
 - String repeat
