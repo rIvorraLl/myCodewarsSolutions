@@ -30,6 +30,22 @@ public class BumpsTheRoad {
     return "Woohoo!";
   }
   ```
+  - Maximum Product
+  ```java
+  public class MaxProduct {
+    public int adjacentElementsProduct(int[] array) {
+      int i = 1;
+      int prov = array[i] * array[i-1];
+      for (i = 1; i < array.length; i++) {
+          if (array[i] * array[i-1] > prov) {
+              prov = array[i] * array[i-1];
+          }
+      }
+      return prov;
+    }
+}
+
+```
   
 **8 kyu**
 
