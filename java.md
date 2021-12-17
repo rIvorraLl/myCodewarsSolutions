@@ -13,6 +13,26 @@ public class Kata {
 ```
 
 **7 kyu**
+- Powers of i
+```java
+public class Kata {
+
+    public static String pofi(int n) {
+      int power = n % 4;
+      if ((power == 0) || (power == 4)) {
+        return "1";
+      } else if (power == 1) {
+            return "i";
+  
+      } else if (power == 2) {
+        return "-1";
+      } else {
+        return "-i";
+      }
+    }
+      
+  }
+  ```
 - Bumps in the Road
 
 ```java
