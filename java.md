@@ -29,8 +29,10 @@ public class BumpsTheRoad {
     }
     return "Woohoo!";
   }
+  
   ```
   - Maximum Product
+  
   ```java
   public class MaxProduct {
     public int adjacentElementsProduct(int[] array) {
@@ -46,10 +48,36 @@ public class BumpsTheRoad {
 }
 
 ```
+- Stanton measure
+
+```java
+public class Kata {
+
+    public static int stantonMeasure(int[] arr) {
+        int counterOnes = 0;
+        int counterStanton = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 1) {
+                counterOnes++;
+            }
+        }
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] == counterOnes) {
+                counterStanton++;
+            }
+        }
+        return counterStanton;
+
+    }
+
+}
+
+```
   
 **8 kyu**
 
 - String repeat
+
 ```java
 public class Solution {
     public static String repeatStr(final int repeat, final String string) {
