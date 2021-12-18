@@ -120,6 +120,23 @@ public class BumpsTheRoad {
     }
 }
 ```
+- Maximum multiple
+
+```java
+public class MaxMultiple {
+  public static int maxMultiple(int divisor, int bound) {
+    int n = 0;
+    while (bound > 0) {
+      if (bound % divisor == 0) {
+        n = bound;
+        bound = 0;
+      }
+      bound--;
+    }
+    return n;
+  }
+}
+```
 
 - Stanton measure
 
