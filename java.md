@@ -163,6 +163,17 @@ public class Kata {
 }
 ```
 
+- Number of Decimal Digits
+
+```java
+public class DecTools {
+  public static int Digits(long n) {
+    String str = n + "";
+    return str.length();
+  }
+}
+```
+
 **8 kyu**
 
 - String repeat
