@@ -9,11 +9,41 @@ public class Kata {
       + numbers[6] + numbers[7] + numbers[8] + numbers[9];
       return newString;
     }
+```
 
+- Bit counting
+```java
+public class BitCounting {
+
+    public static int countBits(int n) {
+        int j = n;
+        int len = 1;
+        while (j / 2 > 0) {
+            j = j / 2;
+            len++;
+        }
+        int k = 0;
+        int[] binary = new int[len];
+        while (n / 2 > 0) {
+            binary[k] = n % 2;
+            n = n / 2;
+            k++;
+        }
+        binary[k] = n % 2;
+        int counter = 0;
+        for (int i = 0; i < binary.length; i++) {
+            if (binary[i] == 1) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+  }
 ```
 
 **7 kyu**
 - Powers of i
+
 ```java
 public class Kata {
 
@@ -33,6 +63,7 @@ public class Kata {
       
   }
   ```
+
   - Automorphic Number (Special Numbers Series #6)
   
   ```java
@@ -70,9 +101,9 @@ public class BumpsTheRoad {
     }
     return "Woohoo!";
   }
-}
-  
-  ```
+}  
+```
+
   - Maximum Product
   
   ```java
@@ -88,8 +119,8 @@ public class BumpsTheRoad {
       return prov;
     }
 }
-
 ```
+
 - Stanton measure
 
 ```java
@@ -113,9 +144,8 @@ public class Kata {
     }
 
 }
-
 ```
-  
+
 **8 kyu**
 
 - String repeat
@@ -130,8 +160,8 @@ public class Solution {
         return newStr;
     }
 }
-
 ```
+
 - Convert a boolean to string
 
 ```java
@@ -145,8 +175,8 @@ public class BooleanToString {
   }
 
 }
-
 ```
+
 - Basic variable assignment
 
 ```java
@@ -155,8 +185,8 @@ public class Kata {
     public static String b = "wa.rs";
     public static String name = a + b;
 }
-
 ```
+
 - Even or odd
 
 ```java
@@ -168,5 +198,4 @@ public class EvenOrOdd {
         return "Odd";
     }
 }
-
 ```
