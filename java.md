@@ -33,6 +33,27 @@ public class Kata {
       
   }
   ```
+  - Automorphic Number (Special Numbers Series #6)
+  
+  ```java
+  public class Solution
+{
+    public static String autoMorphic(int number)
+    {
+      int square = number * number;
+      int end = 1;
+      while (number*end<=square) {
+        end = end * 10;
+      }
+      if (square % end == number) {
+        return "Automorphic";
+      } else {
+        return "Not!!";
+      }
+    }
+}
+```
+
 - Bumps in the Road
 
 ```java
@@ -49,6 +70,7 @@ public class BumpsTheRoad {
     }
     return "Woohoo!";
   }
+}
   
   ```
   - Maximum Product
