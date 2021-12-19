@@ -131,9 +131,28 @@ public class Kata {
   }
   ```
 
-  - Automorphic Number (Special Numbers Series #6)
+- Special Number (Special Numbers Series #5)
+
+```java
+public class Solution {
+    public static String specialNumber(int number) {
+      char[] notSpecialNums = {'6', '7', '8', '9'};
+      String num = number + "";
+      for (int i = 0; i < num.length(); i++) {
+        for (int j = 0; j < notSpecialNums.length; j++) {
+        if (num.charAt(i) == notSpecialNums[j]) {
+          return "NOT!!";
+          }
+        }
+      }
+      return "Special!!";
+      }
+    }
+```
+
+- Automorphic Number (Special Numbers Series #6)
   
-  ```java
+```java
   public class Solution
 {
     public static String autoMorphic(int number)
