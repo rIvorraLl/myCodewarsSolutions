@@ -21,19 +21,8 @@ public class LargestDifference {
 ```
 
 **6 kyu**
-- Create phone number
-
-```java
-public class Kata {
-    public static String createPhoneNumber(int[] numbers) {
-      String newString = "(" + numbers[0] + numbers[1] + numbers[2] + ")" + " "
-      + numbers[3] + numbers[4] + numbers[5] + "-"
-      + numbers[6] + numbers[7] + numbers[8] + numbers[9];
-      return newString;
-    }
-```
-
 - Bit counting
+
 ```java
 public class BitCounting {
 
@@ -63,8 +52,39 @@ public class BitCounting {
   }
 ```
 
-**7 kyu**
+- Multiples of 3 or 5
 
+```java
+public class Solution {
+
+  public int solution(int number) {
+    if (number == 0) {
+      return 0;
+    }
+    int sum = 0;
+    for (int i = 3; i < number; i++) {
+      if (i % 3 == 0 || i % 5 == 0) {
+        sum = sum + i;
+      } 
+    }
+    return sum;
+  }
+}
+```
+
+- Create phone number
+
+```java
+public class Kata {
+    public static String createPhoneNumber(int[] numbers) {
+      String newString = "(" + numbers[0] + numbers[1] + numbers[2] + ")" + " "
+      + numbers[3] + numbers[4] + numbers[5] + "-"
+      + numbers[6] + numbers[7] + numbers[8] + numbers[9];
+      return newString;
+    }
+```
+
+**7 kyu**
 - Square every number
 
 ```java
@@ -249,6 +269,29 @@ public class DecTools {
   }
 }
 ```
+
+- Printer error
+
+```java
+public class Printer {
+    
+    public static String printerError(String s) {
+      int errors = 0;
+      char[] wrongLetters = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+      for (int i = 0; i < s.length(); i++) {
+        for (int j = 0; j < wrongLetters.length; j++) {
+          if (s.charAt(i) == wrongLetters[j]) {
+            errors++;
+            j = wrongLetters.length;
+          }
+        }
+        
+      }
+      return errors + "/" + s.length();
+    }
+}
+```
+
 - Will you survive the zombie onslaught?
 ```java
 public class Kata {
