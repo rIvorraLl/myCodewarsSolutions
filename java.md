@@ -163,6 +163,35 @@ public class MaxMultiple {
 }
 ```
 
+- Count the digit
+```java
+public class CountDig {
+    
+    public static int nbDig(int n, int d) {
+      int counter = 0;
+      String keeper = new String();
+      for (int i = 0; i <= n; i++) {
+        int power = i * i;
+        keeper += power + "";
+      }
+      char searched = 0;
+      char[] strNums = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+      int[] nums = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+      for (int m = 0; m < nums.length; m++) {
+        if (nums[m] == d) {
+          searched = strNums[m];
+        }
+      }
+      for (int j = 0; j < keeper.length(); j++) {
+        if (keeper.charAt(j) == searched) {
+          counter++;
+        }
+      }
+      return counter;
+    }
+}
+```
+
 - Stanton measure
 
 ```java
