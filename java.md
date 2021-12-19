@@ -248,6 +248,7 @@ public class StringToNumber {
           double augment = Math.pow(10, len-1);
           result = result +  augment * nums[j];
           len--;
+          j = nums.length;
         }
         j++;
       }
