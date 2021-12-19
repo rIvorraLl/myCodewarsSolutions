@@ -230,6 +230,42 @@ public class Kata {
 
 **8 kyu**
 
+- Convert a String to a Number!
+
+```java
+public class StringToNumber {
+  public static int stringToNumber(String str) {
+    int provLen = str.length();
+    int len = str.length();
+
+    char[] strNums = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    int[] nums = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    double result = 0;
+    for (int i = 0; i < provLen; i++) {
+      int j = 0;
+      while (j < nums.length) {
+        if (str.charAt(i) == strNums[j]) {
+          double augment = Math.pow(10, len-1);
+          result = result +  augment * nums[j];
+          len--;
+        }
+        j++;
+      }
+    }
+    int intRes = (int)result;
+    if (str.charAt(0) == '-') {
+      double augment = Math.pow(10, len-1);
+      int augmentInt = (int) augment;
+      int negative = (intRes - (2 * intRes)) / 10;
+      return negative;
+    } else {
+    return intRes;
+    }
+
+}
+}
+```
+
 - String repeat
 
 ```java
