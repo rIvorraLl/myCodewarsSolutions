@@ -42,6 +42,31 @@ public class BitCounting {
 ```
 
 **7 kyu**
+
+- Square every number
+
+```java
+public class SquareDigit {
+
+  public static int squareDigits(int n) {
+    String nStr = n + "";
+    int len = nStr.length();
+    int augment = 1;
+    String returnStr = new String();
+    int i = 0;
+    while (i < len) {
+      int digit = n / augment % 10;
+      int power = digit * digit;
+      augment = augment * 10;
+      returnStr = power + returnStr;
+      i++;
+    }
+    int returnNum = Integer.parseInt(returnStr);
+    return returnNum;
+    }
+  }
+```
+
 - Powers of i
 
 ```java
