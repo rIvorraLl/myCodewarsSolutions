@@ -315,7 +315,7 @@ public class Solution {
 ```java
 public class BooleanToString {
   public static String convert(boolean b){
-    if (b == true) {
+    if (b) {
       return "true";
     } else {
       return "false";
