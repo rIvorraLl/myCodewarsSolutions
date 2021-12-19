@@ -173,6 +173,35 @@ public class DecTools {
   }
 }
 ```
+- Will you survive the zombie onslaught?
+```java
+public class Kata {
+
+  public static String zombieShootout(int zombies, int range, int ammo) {
+    double dRange = range;
+    int killedZombies = 0;
+         if (zombies == 0) {
+          return "You shot all 0 zombies.";
+      } else if (ammo == 0) {
+           return "You shot 0 zombies before being eaten: ran out of ammo.";
+         }
+    while (dRange > 0) {
+        killedZombies++;
+        zombies--;
+        ammo--;
+        dRange = dRange - 0.5;
+        if (ammo == 0 && zombies > 0 && dRange == 0) {
+            return "You shot " + killedZombies + " zombies before being eaten: overwhelmed.";
+        } else if (ammo == 0 && zombies > 0) {
+            return "You shot " + killedZombies + " zombies before being eaten: ran out of ammo.";
+        } else if (zombies == 0) {
+            return "You shot all " + killedZombies + " zombies.";
+        } 
+    }
+        return "You shot " + killedZombies + " zombies before being eaten: overwhelmed.";
+  }
+}
+```
 
 **8 kyu**
 
