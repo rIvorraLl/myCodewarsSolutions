@@ -1,3 +1,25 @@
+**5 kyu**
+- Largest Difference in Increasing Indexes
+
+```java
+public class LargestDifference {
+    public static int largestDifference(int[] data) {
+    int prov = 0;
+    for (int i = 0; i < data.length; i++) {
+      for (int j = data.length-1; j > 0; j--) {
+        if (data[i] <= data[j]) {
+          if (j - i > prov) {
+            prov = j - i;
+            j = data.length;
+          }
+        }
+      }
+    }
+      return prov;
+    }
+}
+```
+
 **6 kyu**
 - Create phone number
 
