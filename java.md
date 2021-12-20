@@ -51,6 +51,31 @@ public class BitCounting {
     }
   }
 ```
+- Stop gninnipS My sdroW!
+
+```java
+public class SpinWords {
+
+    public String spinWords(String sentence) {
+        String[] splitted = sentence.split(" ");
+        String newString = new String();
+        String prov = new String();
+        for (int i = 0; i < splitted.length; i++) {
+            if (splitted[i].length() < 5) {
+                newString += splitted[i] + " ";
+            } else {
+                for (int j = 0; j < splitted[i].length(); j++) {
+                    String word = splitted[i];
+                    prov = word.charAt(j) + prov;
+                }
+                newString += prov + " ";
+                prov = "";
+            }
+        }
+        return newString.trim();
+    }
+}
+```
 
 - Multiples of 3 or 5
 
