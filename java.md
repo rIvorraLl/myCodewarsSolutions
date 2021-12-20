@@ -77,6 +77,35 @@ public class SpinWords {
 }
 ```
 
+- Count the smiley faces!
+
+```java
+import java.util.*;
+
+public class SmileFaces {
+
+    public static int countSmileys(List<String> arr) {
+        int counter = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            String fc = arr.get(i);
+
+            if (fc.length() == 3
+                    && (fc.charAt(0) == ':' || fc.charAt(0) == ';')
+                    && (fc.charAt(1) == '-' || fc.charAt(1) == '~')
+                    && (fc.charAt(2) == ')' || fc.charAt(2) == 'D')) {
+                counter++;
+            } else if (fc.length() == 2
+                    && (fc.charAt(0) == ':' || fc.charAt(0) == ';')
+                    && (fc.charAt(1) == ')' || fc.charAt(1) == 'D')) {
+                counter++;
+            }
+        }
+        return counter;
+
+    }
+}
+```
+
 - Multiples of 3 or 5
 
 ```java
