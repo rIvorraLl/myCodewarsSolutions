@@ -130,6 +130,33 @@ public class Kata {
       
   }
   ```
+  
+- The old switcheroo
+
+```java
+public class Kata {
+    public static String vowel2Index(String s) {
+        char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+        String newStr = new String();
+        boolean flag = false;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < vowels.length; j++) {
+                if (s.charAt(i) == vowels[j]) {
+                    newStr += i + 1;
+                    flag = true;
+                    j = vowels.length;
+                }
+            }
+            if (!flag) {
+                newStr += s.charAt(i);
+            } else {
+                flag = false;
+            }
+        }
+        return newStr;
+    }
+}
+```
 
 - Special Number (Special Numbers Series #5)
 
