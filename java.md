@@ -10,12 +10,11 @@ public class LargestDifference {
         if (data[i] <= data[j]) {
           if (j - i > prov) {
             prov = j - i;
-            j = data.length;
           }
         }
       }
     }
-      return prov;
+    return prov;
     }
 }
 ```
