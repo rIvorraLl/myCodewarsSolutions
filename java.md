@@ -493,6 +493,40 @@ public class StringToNumber {
 }
 ```
 
+- Abbreviate Two Words
+
+```java
+public class AbbreviateTwoWords {
+
+    public static String abbrevName(String name) {
+        String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lower = "abcdefghijklmnopqrstuvwxyz";
+        String initials = new String();
+        for (int i = 0; i < name.length(); i++) {
+            for (int j = 0; j < lower.length(); j++) {
+                if (i == 0) {
+                    if (name.charAt(i) == upper.charAt(j)
+                            || name.charAt(i) == lower.charAt(j)) {
+                        initials = upper.charAt(j) + ".";
+                        j = lower.length();
+                    }
+                } else if (name.charAt(i) == ' ') {
+                    for (int k = 0; k < lower.length(); k++) {
+                        if (name.charAt(i + 1) == upper.charAt(k)
+                                || name.charAt(i + 1) == lower.charAt(k)) {
+                            initials += upper.charAt(k);
+                            k = lower.length();
+                            i++;
+                        }
+                    }
+                }
+            }
+        }
+        return initials;
+    }
+}
+```
+
 - String repeat
 
 ```java
