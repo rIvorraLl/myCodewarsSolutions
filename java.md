@@ -1,4 +1,45 @@
 **5 kyu**
+
+- Gap in primes
+
+```java
+import java.util.Arrays;
+
+class GapInPrimes {
+
+    public static Boolean isPrime(long number) {
+        long i = 2;
+        boolean result = true;
+        while (i < number) {
+            if (number % i == 0) {
+                result = false;
+                i = number;
+            }
+            i++;
+        }
+        return result;
+    }
+
+    public static long[] gap(int g, long m, long n) {
+        long prime1 = 0;
+        long[] arr = new long[2];
+
+        for (long i = m; i <= n; i++) {
+            if (isPrime(i)) {
+                if (i - prime1 == g) {
+                    arr[0] = prime1;
+                    arr[1] = i;
+                    return arr;
+                } else {
+                    prime1 = i;
+                }
+            }
+        }
+        return null;
+    }
+}
+```
+
 - Largest Difference in Increasing Indexes
 
 ```java
