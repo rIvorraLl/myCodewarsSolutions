@@ -507,6 +507,22 @@ public class Solution {
 }
 ```
 
+- Square(n) Sum
+
+```java
+public class Kata
+ {
+  public static int squareSum(int[] n)
+  { 
+    int total = 0;
+    for (int i = 0; i < n.length; i++) {
+      total = total + (n[i] * n[i]);
+    }
+    return total;
+  }
+ }
+```
+
 - Convert a boolean to string
 
 ```java
