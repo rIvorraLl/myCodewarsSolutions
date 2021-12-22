@@ -117,6 +117,26 @@ public class SpinWords {
 }
 ```
 
+- Is a number prime?
+
+```java
+public class Prime {
+  public static boolean isPrime(int num) {
+    if (num <= 1) {
+      return false;
+    }
+    double nn = Math.sqrt(num);
+    int n = (int)nn + 1;
+    for (int i = 2; i < n; i++) {
+      if (num % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+```
+
 - Count the smiley faces!
 
 ```java
