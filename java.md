@@ -367,6 +367,28 @@ public class BumpsTheRoad {
     }
 }
 ```
+
+- Find the next perfect square!
+
+```java
+public class NumberFun {
+  public static long findNextSquare(long sq) {
+    if (Math.sqrt(sq) % 1 != 0) {
+      return -1;
+    }
+    long i = sq;
+    boolean loop = true;
+    while (loop) {
+      i++;
+      if (Math.sqrt(i) % 1 == 0) {
+        loop = false;
+      }
+    }
+    return i;
+  }
+}
+```
+
 - Maximum multiple
 
 ```java
