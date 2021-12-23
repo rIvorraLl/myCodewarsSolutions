@@ -502,6 +502,24 @@ public class Kata {
 }
 ```
 
+- Count all the sheep on farm in the heights of New Zealand
+
+```java
+public class Kata {
+  public static int lostSheep(int[] fridayNightCounting, int[] saturdayNightCounting, int sheepTotal) {
+    int counter = 0;
+    for (int i = 0; i < fridayNightCounting.length; i++) {
+      counter += fridayNightCounting[i];
+    }
+    for (int j = 0; j < saturdayNightCounting.length; j++) {
+      counter += saturdayNightCounting[j];
+    }
+    int lost = sheepTotal - counter;
+    return lost;
+  }
+}
+```
+
 - Simple beads count
 ```java
 public class BeadsCounter {
