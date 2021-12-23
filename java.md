@@ -502,6 +502,22 @@ public class Kata {
 }
 ```
 
+- Halving sum
+
+```java
+public class HalvingSum {
+  int halvingSum(int n) {
+    int sum = n;
+    int index = n;
+    while (index >= 1) {
+      index = index /2;
+      sum = sum + index;
+    }
+    return sum;
+  }
+}
+```
+
 - Count all the sheep on farm in the heights of New Zealand
 
 ```java
