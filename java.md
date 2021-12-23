@@ -636,6 +636,25 @@ public class Kata
  }
 ```
 
+- Calculate BMI
+
+```java
+public class Calculate {
+  public static String bmi(double weight, double height) {
+    double bmiNum = weight / (height * height);
+    if (bmiNum <= 18.5) {
+      return "Underweight";
+    } else if (bmiNum <= 25.0) {
+      return "Normal";
+    } else if (bmiNum <= 30.0) {
+      return "Overweight";
+    } else {
+      return "Obese";
+    }
+  }
+}
+```
+
 - Convert a boolean to string
 
 ```java
