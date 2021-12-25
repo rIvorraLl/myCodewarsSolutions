@@ -91,6 +91,38 @@ public class BitCounting {
     }
   }
 ```
+
+- Upside down
+
+```java
+public class UpsideDown {
+	public static int solve(int x, int y) {
+		int counter = 0;
+		String prov = new String();
+		String inverted = new String();
+		for (int i = x; i < y; i++) {
+			prov = i + "";
+			for (int j = 0; j < prov.length(); j++) {
+				if (prov.charAt(j) == '6') {
+					inverted = "9" + inverted;
+				} else if (prov.charAt(j) == '9') {
+					inverted = "6" + inverted;
+
+				} else if (prov.charAt(j) == '0' || prov.charAt(j) == '1' || prov.charAt(j) == '8') {
+					inverted = prov.charAt(j) + "" + inverted;
+				}
+
+			}
+			if (inverted.equals(prov)) {
+				counter++;
+			}
+			prov =  "";
+			inverted = "";
+		}
+		return counter;
+	}
+}
+```
 - Stop gninnipS My sdroW!
 
 ```java
