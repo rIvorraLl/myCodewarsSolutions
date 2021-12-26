@@ -275,6 +275,19 @@ def bumps(road):
     return "Woohoo!" if counter < 16 else "Car Dead"
 
 ```
+
+- Simple fun #195: Guess Hat Color
+
+```python
+def guess_hat_color(a,b,c,d):
+    winner = 0
+    if (b == "white" and c == "white") or (b == "black" and c == "black"):
+        winner = 1
+    else:
+        winner = 2
+    return winner
+```
+
 - Convert an array of strings to an array of numbers
 
 ```python
