@@ -604,6 +604,31 @@ public class Kata {
 }
 ```
 
+- Largest pair sum in array
+
+```java
+public class Solution {
+    public static int largestPairSum(int[] numbers) {
+        int prov1 = -1000000000;
+        Integer prov2 = -1000000000;
+        int noRepeat = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > prov1) {
+                prov1 = numbers[i];
+                noRepeat = i;
+            }
+        }
+        for (int j = 0; j < (numbers.length); j++) {
+            if (numbers[j] > prov2 && j != noRepeat) {
+                prov2 = numbers[j];
+            }
+        }
+        System.out.println(prov1 + " " + prov2);
+        return prov1 + prov2;
+    }
+}
+```
+
 - Simple beads count
 ```java
 public class BeadsCounter {
