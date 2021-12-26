@@ -623,7 +623,6 @@ public class Solution {
                 prov2 = numbers[j];
             }
         }
-        System.out.println(prov1 + " " + prov2);
         return prov1 + prov2;
     }
 }
