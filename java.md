@@ -492,6 +492,37 @@ public class Kata {
 }
 ```
 
+- Alternate case
+
+```java
+class Kata {
+    static String alternateCase(final String string) {
+      String newString = new String();
+      String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      String lower = "abcdefghijklmnopqrstuvwxyz";
+      boolean insert = true;
+      for (int i = 0; i < string.length(); i++) {
+        for (int j = 0; j < lower.length(); j++) {
+          if (string.charAt(i) == upper.charAt(j)) {
+            newString += lower.charAt(j);
+            j = lower.length();
+            insert = false;
+          } else if (string.charAt(i) == lower.charAt(j)) {
+            newString += upper.charAt(j);
+            j = lower.length();
+            insert = false;
+          }
+        }
+        if (insert) {
+          newString += string.charAt(i);
+        }
+        insert = true; 
+      }
+      return newString;
+    }
+}
+```
+
 - Number of Decimal Digits
 
 ```java
