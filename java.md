@@ -323,7 +323,7 @@ public class Kata {
 }
 ```
 
-- Nth
+- Nth Smallest Element (Array Series #4)
 
 ```java
 public class Kata {
