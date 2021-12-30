@@ -274,6 +274,50 @@ public class SquareDigit {
   }
 ```
 
+- Isograms
+
+```java
+public class isogram {
+    public static String toLower(String str) {
+        String lowerStr = "abcdefghijklmnopqrstuvwxyz";
+        String upperStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String newStr = new String();
+        boolean isUpper = false;
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = 0; j < lowerStr.length(); j++) {
+                if (str.charAt(i) == upperStr.charAt(j)) {
+                    newStr += lowerStr.charAt(j);
+                    isUpper = true;
+                    j = lowerStr.length();
+                }
+            }
+            if (!isUpper) {
+                newStr += str.charAt(i);
+            }
+            isUpper = false;
+        }
+        return newStr;
+
+        }
+    public static boolean isIsogram (String str){
+        if (str == "") {
+          return true;
+        }
+        str = toLower(str);
+        String newStr = str.charAt(0) + "";
+        for (int i = 1; i < str.length(); i++) {
+                for (int j = 0; j < newStr.length(); j++) {
+                        if (str.charAt(i) == newStr.charAt(j)) {
+                                return false;
+                        }
+                }
+                newStr += str.charAt(i);
+        }
+        return true;
+    }
+}
+```
+
 - Powers of i
 
 ```java
