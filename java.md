@@ -468,6 +468,25 @@ public class Spooner {
 }
 ```
 
+- Incrementer
+
+```java
+public class Kata {
+  
+  public static int[] incrementer(int[] numbers) {
+    int[] incremented = new int[numbers.length];
+    for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] + i + 1 > 9) {
+        incremented[i] = (numbers[i] + i + 1) % 10;
+      } else {
+        incremented[i] = numbers[i] + i + 1;
+      }
+    }
+    return incremented;
+  }
+}
+```
+
 - Bumps in the Road
 
 ```java
