@@ -60,6 +60,27 @@ public class LargestDifference {
 }
 ```
 
+- Simple pig latin
+
+```java
+public class PigLatin {
+    public static String pigIt(String str) {
+      String[] splitStr = str.split("\\s");
+      String result = new String();
+      for (int i = 0; i < splitStr.length; i++) {
+        int len = splitStr[i].length();
+        String slice = splitStr[i];
+        if (slice.equals("!") || slice.equals("?")) {
+          result += slice;
+        } else {
+          result += slice.substring(1, len) + slice.substring(0, 1) + "ay" + " ";
+        }
+      }
+      return result.strip();
+    }
+}
+```
+
 **6 kyu**
 - Bit counting
 
@@ -424,6 +445,25 @@ public class Solution {
       } else {
         return "Not!!";
       }
+    }
+}
+```
+
+- Spoonerize me
+
+```java
+public class Spooner {
+    public String spoonerize(String words) {
+      String[] splitW = words.split("\\s");
+      String result = new String();
+      int len0 = splitW[0].length();
+      int len1 = splitW[1].length();
+      String slice0 = splitW[0];
+      String slice1 = splitW[1];
+      result += slice1.substring(0, 1) + slice0.substring(1, len0) + " "
+        + slice0.substring(0, 1) + slice1.substring(1, len1);
+      return result;
+
     }
 }
 ```
