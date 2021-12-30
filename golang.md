@@ -16,3 +16,14 @@ func DNAtoRNA(dna string) string {
 	}
 	return rna
 }
+```
+
+- Is he gonna survive?
+
+```go
+package kata
+
+func Hero(bullets, dragons int) bool {
+  return bullets >= dragons * 2
+}
+```
