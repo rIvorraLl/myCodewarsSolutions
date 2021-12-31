@@ -710,6 +710,28 @@ public class Kata {
 }
 ```
 
+- Two to One
+
+```java
+public class TwoToOne {
+    
+    public static String longest (String s1, String s2) {
+      String alphabet = "abcdefghijklmnopqrstuvwxyz";
+      String merged = s1 + s2;
+      String result = new String();
+      for (int i = 0; i < alphabet.length(); i++) {
+        for (int j = 0; j < merged.length(); j++) {
+          if (alphabet.charAt(i) == merged.charAt(j)) {
+            result += alphabet.charAt(i);
+            j = merged.length();
+          }
+        }
+      }
+      return result;
+    }
+}
+```
+
 - Halving sum
 
 ```java
@@ -932,6 +954,16 @@ public class BooleanToString {
 
 }
 ```
+
+- Grasshopper - Check for factor
+
+```java
+public class Kata {
+    public static boolean checkForFactor(int base, int factor) {
+        return base % factor == 0;
+    }
+}
+
 
 - Basic variable assignment
 
