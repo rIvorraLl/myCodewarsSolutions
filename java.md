@@ -113,6 +113,29 @@ public class BitCounting {
   }
 ```
 
+- Sum of parts
+
+```java
+class SumParts {
+
+  public static int[] sumParts(int[] ls) {
+    int len = ls.length + 1;
+    int[] result = new int[len];
+    int sum = 0;
+    for (int i = 0; i < ls.length; i++) {
+      sum += ls[i];
+    }
+    result[0] = sum;
+    for (int j = 0; j < ls.length; j++) {
+      sum -= ls[j];
+      result[j + 1] = sum;
+    }
+    result[result.length - 1] = 0;
+    return result;
+  }
+}
+```
+
 - Upside down
 
 ```java
