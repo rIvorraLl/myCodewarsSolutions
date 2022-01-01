@@ -586,6 +586,7 @@ public class MaxMultiple {
 ```
 
 - Count the digit
+
 ```java
 public class CountDig {
     
@@ -667,6 +668,42 @@ class Kata {
       }
       return newString;
     }
+}
+```
+
+- Descending order
+
+```java
+import java.util.Arrays;
+
+public class DescendingOrder {
+
+    public static int sortDesc(final int num) {
+        String nums = num + "";
+        int[] arr = new int[nums.length()];
+        String sorted = new String();
+        int temp = 0;
+        for (int i = 0; i < nums.length(); i++) {
+            String n = nums.charAt(i) + "";
+            int toInt = Integer.parseInt(n);
+            arr[i] = toInt;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for (int k = 0; k < arr.length; k++) {
+            sorted = arr[k] + sorted;
+            System.out.println(sorted);
+        }
+        return Integer.parseInt(sorted);
+    }
+
 }
 ```
 
