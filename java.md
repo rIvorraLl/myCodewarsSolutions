@@ -899,6 +899,28 @@ public class HalvingSum {
 }
 ```
 
+- Complementary DNA
+
+```java
+public class DnaStrand {
+  public static String makeComplement(String dna) {
+    String complement = new String();
+    for (int i = 0; i < dna.length(); i++) {
+      if (dna.charAt(i) == 'A') {
+        complement += "T";
+      } else if (dna.charAt(i) == 'T') {
+        complement += "A";
+      } else if (dna.charAt(i) == 'C') {
+        complement += "G";
+      } else {
+        complement += "C";
+      }
+    }
+    return complement;
+  }
+}
+```
+
 - Is this a triangle?
 
 ```java
