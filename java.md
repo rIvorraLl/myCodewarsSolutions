@@ -81,6 +81,61 @@ public class PigLatin {
 }
 ```
 
+- Greed is Good
+
+```java
+    public class Greed {
+
+        public static int greedy(int[] dice) {
+            int p1 = 0;
+            int p2 = 0;
+            int p3 = 0;
+            int p4 = 0;
+            int p5 = 0;
+            int p6 = 0;
+            int total = 0;
+            for (int i = 0; i < dice.length; i++) {
+                if (dice[i] == 1) {
+                    p1++;
+                } else if (dice[i] == 2) {
+                    p2++;
+                } else if (dice[i] == 3) {
+                    p3++;
+                } else if (dice[i] == 4) {
+                    p4++;
+                } else if (dice[i] == 5) {
+                    p5++;
+                } else {
+                    p6++;
+                }
+            }
+            System.out.println(p1);
+            if (p1 > 2) {
+                total += 1000;
+                p1 = p1 - 3;
+            } else if (p2 > 2) {
+                total += 200;
+            } else if (p3 > 2) {
+                total += 300;
+            } else if (p4 > 2) {
+                total += 400;
+            } else if (p5 > 2) {
+                total += 500;
+                p5 = p5 - 3;
+            } else if (p6 > 2) {
+                total += 600;
+            }
+            if (p1 > 0) {
+                total += 100 * p1;
+            }
+            if (p5 > 0) {
+                total += 50 * p5;
+            }
+            return total;
+        }
+    }
+```
+
 **6 kyu**
 - Bit counting
 
