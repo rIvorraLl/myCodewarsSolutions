@@ -113,6 +113,42 @@ public class BitCounting {
   }
 ```
 
+- Pair of gloves
+
+```java
+class Kata {
+
+    public static int numberOfPairs(String[] gloves) {
+        String[] colors = new String[gloves.length];
+        int prov = 0;
+        int counter = 0;
+        boolean diff = false;
+        for (int i = 0; i < gloves.length; i++) {
+            for (int j = 0; j < colors.length; j++) {
+                if (gloves[i] == colors[j]) {
+                    diff = true;
+                    j = colors.length;
+                }
+            }
+            if (!diff) {
+                colors[i] = gloves[i];
+            }
+            diff = false;
+        }
+        for (int k = 0; k < colors.length; k++) {
+            for (int l = 0; l < gloves.length; l++) {
+                if (colors[k] != null && colors[k] == gloves[l]) {
+                    prov++;
+                }
+            }
+            counter += prov / 2;
+            prov = 0;
+        }
+        return counter;
+    }
+}
+```
+
 - Sum of parts
 
 ```java
