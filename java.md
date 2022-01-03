@@ -502,6 +502,31 @@ public class Kata {
 }
 ```
 
+- Disemvowel Trolls
+
+````java
+public class Troll {
+    public static String disemvowel(String str) {
+      String vowels = "aeiouAEIOU";
+      String nonVowels = new String();
+      boolean isVowel = false;
+      for (int i = 0; i < str.length(); i++) {
+        for (int j = 0; j < vowels.length(); j++) {
+          if (str.charAt(i) == vowels.charAt(j)) {
+            isVowel = true;
+            j = vowels.length();
+          }
+        }
+        if (!isVowel) {
+          nonVowels += str.charAt(i);
+        }
+        isVowel = false;
+      }
+      return nonVowels;
+    }
+}
+```
+
 - Nth Smallest Element (Array Series #4)
 
 ```java
