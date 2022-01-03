@@ -295,6 +295,39 @@ public class FindOdd {
 }
 ```
 
+- Find the parity outlier
+
+```java
+public class FindOutlier{
+  static int find(int[] integers){
+    boolean a = integers[0] % 2 == 0;
+    boolean b = integers[1] % 2 == 0;
+    boolean c = integers[2] % 2 == 0;
+    boolean pairs = false;
+    if ((a && b) || (a && c) || (b && c)) {
+      pairs = true;
+    }
+    int result = 0;
+    if (pairs) {
+      for (int i = 0; i < integers.length; i++) {
+        if (integers[i] % 2 != 0) {
+          result = integers[i];
+          i = integers.length;
+        }
+      }
+    } else if (!pairs) {
+      for (int i = 0; i < integers.length; i++) {
+        if (integers[i] % 2 == 0) {
+          result = integers[i];
+          i = integers.length;
+        }
+      }
+    }
+    return result;
+  }
+}
+```
+
 - Stop gninnipS My sdroW!
 
 ```java
