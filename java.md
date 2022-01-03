@@ -257,6 +257,44 @@ public class UpsideDown {
     }
 }
 ```
+
+- Find the odd int
+
+```java
+public class FindOdd {
+	public static int findIt(int[] a) {
+            int[] nums = new int[a.length];
+            int counter = 0;
+            int result = 0;
+            boolean diff = false;
+            for (int i = 0; i < a.length; i++) {
+                for (int j = 0; j < nums.length; j++) {
+                    if (a[i] == nums[j]) {
+                        diff = true;
+                        j = nums.length;
+                    }
+                }
+                if (!diff) {
+                    nums[i] = a[i];
+                }
+                diff = false;
+            }
+            for (int k = 0; k < nums.length; k++) {
+                for (int l = 0; l < a.length; l++) {
+                    if (nums[k] == a[l]) {
+                        counter++;
+                    }
+                }
+                if (counter % 2 != 0) {
+                    result = nums[k];
+                    k = nums.length;
+                }
+            }
+            return result;
+  }
+}
+```
+
 - Stop gninnipS My sdroW!
 
 ```java
@@ -504,7 +542,7 @@ public class Kata {
 
 - Disemvowel Trolls
 
-````java
+```java
 public class Troll {
     public static String disemvowel(String str) {
       String vowels = "aeiouAEIOU";
