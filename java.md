@@ -1074,6 +1074,23 @@ public class Solution {
 }
 ```
 
+- Small enough? - Beginner
+
+```java
+public class Kata {
+  public static boolean smallEnough(int[] a, int limit) {
+    boolean result = true;
+    for (int i = 0; i < a.length; i++) {
+      if (a[i] > limit) {
+        result = false;
+        i = a.length;
+      }
+    }
+    return result;
+  }
+}
+```
+
 - Simple beads count
 ```java
 public class BeadsCounter {
@@ -1232,7 +1249,7 @@ public class Kata {
         return base % factor == 0;
     }
 }
-
+```
 
 - Basic variable assignment
 
