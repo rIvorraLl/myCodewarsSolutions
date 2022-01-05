@@ -1104,6 +1104,23 @@ public class BeadsCounter {
 }
 ```
 
+- Count the divisors of a number
+
+```java
+public class FindDivisor {
+
+  public long numberOfDivisors(int n) {
+    int divisors = 0;
+    for (int i = 1; i <= n; i++) {
+      if (n % i == 0) {
+        divisors++;
+      }
+    }
+    return divisors;
+  }
+}
+```
+
 **8 kyu**
 
 - Convert a String to a Number!
