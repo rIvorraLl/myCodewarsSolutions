@@ -1074,6 +1074,36 @@ public class Solution {
 }
 ```
 
+- Paul's Misery
+
+```java
+public class Kata {
+    public static String paul(String[] x) {
+      int result = 0;
+      for (int i = 0; i < x.length; i++) {
+        if (x[i].equals("kata")) {
+          result += 5;
+        } else if (x[i].equals("Petes kata")) {
+          result += 10;
+        } else if (x[i].equals("eating")) {
+          result += 1;
+        }
+      }
+      String status = new String();
+      if (result < 40) {
+        status = "Super happy!";
+      } else if (result < 70) {
+        status = "Happy!";
+      } else if (result < 100) {
+        status = "Sad!";
+      } else {
+        status = "Miserable!";
+      }
+      return status;
+    }
+}
+```
+
 - Small enough? - Beginner
 
 ```java
