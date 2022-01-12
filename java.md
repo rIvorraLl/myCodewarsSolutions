@@ -697,6 +697,25 @@ public class Kata {
 }
 ```
 
+- Exclamation marks series #8: Move all exclamation marks to the end of the sentence
+
+```java
+public class Kata {
+  public static String remove(String s){
+    String exclamations = new String();
+    String text = new String();
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) == '!') {
+        exclamations += s.charAt(i);
+      } else {
+        text += s.charAt(i);
+      }
+    }
+    return text + exclamations;
+   }
+}
+```
+
 - Bumps in the Road
 
 ```java
