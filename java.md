@@ -1153,6 +1153,23 @@ public class BeadsCounter {
 }
 ```
 
+- Series of integers from 0 to n
+
+```java
+public class Kata {
+
+    public static int[] generateIntegers(int n) {
+        int[] result = new int[n + 1];
+        int i = 0;
+        while (i <= n) {
+            result[i] = i;
+            i++;
+        }
+        return result;
+    }
+}
+```
+
 - Count the divisors of a number
 
 ```java
