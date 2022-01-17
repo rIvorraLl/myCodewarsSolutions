@@ -204,6 +204,49 @@ class Kata {
 }
 ```
 
+- Convert ISBN-10 to ISBN-13
+
+```java
+public class Solution {
+
+    public static String isbnConverter(String isbn) {
+        String nums = "0123456789";
+        String addPrefix = "978";
+        for (int i = 0; i < isbn.length() - 1; i++) {
+            for (int j = 0; j < nums.length(); j++) {
+                if (isbn.charAt(i) == nums.charAt(j)) {
+                    addPrefix += nums.charAt(j);
+                    j = nums.length();
+                }
+            }
+        }
+        int multDigit = 0;
+        for (int i = 0; i < addPrefix.length(); i++) {
+            if (i == 0 || i % 2 == 0) {
+              char tempChar = addPrefix.charAt(i);
+                int tempNum = Integer.parseInt(String.valueOf(tempChar));
+                multDigit+= tempNum;
+            } else {
+                char tempChar = addPrefix.charAt(i);
+                int tempNum2 = Integer.parseInt(String.valueOf(tempChar));
+                int multiplied = tempNum2 * 3;
+                multDigit+= multiplied;
+                
+            }
+        }
+        int moduloOperation = multDigit % 10;
+        if (moduloOperation > 0) {
+	    moduloOperation = 10 - moduloOperation;
+            addPrefix += moduloOperation + " ";
+        } else {
+            addPrefix += "0";
+        }
+        return "978-" + isbn.substring(0,12) + addPrefix.charAt(12);
+        
+    }
+}
+```
+
 - Sum of parts
 
 ```java
