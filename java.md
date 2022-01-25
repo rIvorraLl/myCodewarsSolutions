@@ -1019,6 +1019,23 @@ public class Kata {
 }
 ```
 
+- Remove consecutive duplicate words
+
+```java
+public class Kata {
+    public static String removeConsecutiveDuplicates(String s){
+       String[] strArr = s.split(" ");
+       String result = strArr[0];
+       for (int i = 1; i < strArr.length; i++) {
+           if (!(strArr[i-1].equals(strArr[i]))) {
+               result += " " + strArr[i];
+           }
+       }
+       return result;
+    }
+  }
+  ```
+
 - Two to One
 
 ```java
