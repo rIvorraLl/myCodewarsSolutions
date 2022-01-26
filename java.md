@@ -247,6 +247,50 @@ public class Solution {
 }
 ```
 
+- Mexican Wave
+
+```java
+public class MexicanWave {
+
+    public static String[] wave(String str) {
+        String[] empty = new String[0];
+        int spaces = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ') {
+                spaces++;
+            }
+        }
+        int len = str.length() - spaces;
+        String[] result = new String[len];
+        int waved = 0;
+        String provisionalWord = new String();
+        if ("".equals(str)) {
+            return empty;
+        } else {
+            for (int i = 0; i < str.length() - spaces; i++) {
+                for (int j = 0; j < str.length(); j++) {
+                    if (j == waved) {
+                        char letter = str.charAt(j);
+                        provisionalWord += Character.toUpperCase(letter);
+                    } else {
+                        provisionalWord += str.charAt(j);
+                    }
+                }            
+                waved++;
+                if (!(provisionalWord.equals(str))) {
+                    result[i] = provisionalWord;
+
+                } else {
+                    i--;
+                }
+                provisionalWord = "";
+            }
+        }
+        return result;
+    }
+  }
+```
+
 - Sum of parts
 
 ```java
