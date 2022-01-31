@@ -1394,7 +1394,7 @@ public class Kata
  }
 ```
 
-- Summation
+- Grasshopper - Summation
 
 ```java
 public class GrassHopper {
