@@ -1289,6 +1289,24 @@ public class Kata {
     }
 }
 ```
+- Vowel count
+```java
+public class Vowels {
+
+    public static int getCount(String str) {
+      int vowelsCount = 0;
+      String vowels = "aeiou";
+      for (int i = 0; i < str.length(); i++) {
+        for (int j = 0; j < vowels.length(); j++) {
+          if (str.charAt(i) == vowels.charAt(j)) {
+            vowelsCount++;
+            j = vowels.length();
+          }
+        }
+      }
+      return vowelsCount;
+    }
+```
 
 - Count the divisors of a number
 
