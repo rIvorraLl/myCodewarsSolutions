@@ -1213,6 +1213,28 @@ public class Solution {
 }
 ```
 
+- Minimum Steps (Array Series #6)
+
+```java
+import java.util.Arrays;
+public class Kata {
+    public static int minimumSteps(int[] numbers, int k) {
+      Arrays.sort(numbers);
+      int total = numbers[0];
+      int steps = 0;
+      for (int i = 1; i < numbers.length; i++) {
+        if (total >= k) {
+          i = numbers.length;
+        } else {
+          total = total + numbers[i];
+          steps++;
+        }
+      }
+      return steps;
+    }
+}
+```
+
 - Paul's Misery
 
 ```java
