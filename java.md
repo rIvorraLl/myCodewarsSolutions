@@ -851,7 +851,7 @@ class MinMax {
         int[] result = new int[2];
         int minProv = arr[0];
         int maxProv = arr[0];
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             if (arr[i] > maxProv) {
                 maxProv = arr[i];
             } else if (arr[i] < minProv) {
