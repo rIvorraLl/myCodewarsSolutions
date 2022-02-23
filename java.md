@@ -441,6 +441,29 @@ public class SpinWords {
 }
 ```
 
+- Build Tower
+
+```java
+public class Kata {
+
+    public static String[] TowerBuilder(int nFloors) {
+        String[] tower = new String[nFloors];
+        String ast = "*";
+        String whitespc = " ";
+        int i = 1;
+
+        for (int j = 0; j < nFloors; j++) {
+            int base = (2 * nFloors - 1 - i) / 2;
+            int decimal = base % 1;
+            base = base - decimal;
+            tower[j] = whitespc.repeat(base) + ast.repeat(i) + whitespc.repeat(base);
+            i = i + 2;
+        }
+        return tower;
+    }
+}
+```
+
 - Is a number prime?
 
 ```java
