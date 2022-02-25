@@ -247,6 +247,35 @@ public class Solution {
 }
 ```
 
+- Playing with digits
+
+```java
+import java.util.Arrays;
+
+public class DigPow {
+
+    public static long digPow(int n, int p) {
+        int k = -1;
+        String nStr = n + "";
+        double power = p;
+        int[] arr = new int[nStr.length()];
+        for (int i = 0; i < nStr.length(); i++) {
+            double d = Integer.parseInt(nStr.valueOf(nStr.charAt(i)));
+            arr[i] = (int) Math.pow(d, power);
+            power++;
+        }
+        int added = 0;
+        for (int j = 0; j < arr.length; j++) {
+            added += arr[j];
+        }        
+        if (added % n == 0) {
+            k = added / n;
+        }
+        return k;
+    }
+}
+```
+
 - Mexican Wave
 
 ```java
