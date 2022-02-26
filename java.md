@@ -493,6 +493,65 @@ public class Kata {
 }
 ```
 
+- Errors: histogram
+
+```java
+
+public class HistTest {
+
+    public static String hist(String s) {
+        int uErrors=0, wErrors=0, xErrors=0, zErrors = 0;
+        String star = "*";
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'u') {
+                uErrors++;
+            } else if (s.charAt(i) == 'w') {
+                wErrors++;
+            } else if (s.charAt(i) == 'x') {
+                xErrors++;
+            } else if (s.charAt(i) == 'z') {
+                zErrors++;
+            }
+        }
+        int uSpaces = 5, wSpaces = 5, xSpaces = 5, zSpaces = 5;
+        if (uErrors > 9) {
+            uSpaces = 4;
+        }
+        if (wErrors > 9) {
+            wSpaces = 4;
+        }
+        if (xErrors > 9) {
+            xSpaces = 4;
+        }
+        if (zErrors > 9) {
+            zSpaces = 4;
+        }
+        String space = " ";
+        String u = "u  " + uErrors + space.repeat(uSpaces) + star.repeat(uErrors) + "\r";
+        String w = "w  " + wErrors + space.repeat(wSpaces) + star.repeat(wErrors) + "\r";
+        String x = "x  " + xErrors + space.repeat(xSpaces) + star.repeat(xErrors) + "\r";
+        String z = "z  " + zErrors + space.repeat(zSpaces) + star.repeat(zErrors) + "\r";
+        String result = "";
+        if (uErrors > 0) {
+            result += u;
+        }
+        if (wErrors > 0) {
+            result += w;
+        }
+        if (xErrors > 0) {
+            result += x;
+        }
+        if (zErrors > 0) {
+            result += z;
+        }
+        if (result.length() > 2) {
+            result = result.substring(0, result.length() - 1);
+        }
+        return result;
+    }
+}
+```
+
 - Is a number prime?
 
 ```java
