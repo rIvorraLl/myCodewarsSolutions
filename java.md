@@ -1429,6 +1429,28 @@ public class BeadsCounter {
 }
 ```
 
+- Scoring Tests
+
+```java
+
+public class ScoringTests {
+
+    public static int sol(int[] arr, int r, int o, int w) {
+        int correct = 0, ommitted = 0, incorrect = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                correct += r;
+            } else if (arr[i] == 1) {
+                ommitted += o;
+            } else {
+                incorrect += w;
+            }
+        }
+        return correct + ommitted - incorrect;
+    }
+}
+```
+
 - Series of integers from 0 to n
 
 ```java
