@@ -1416,6 +1416,27 @@ public class Kata {
 }
 ```
 
+- Highest and lowest
+
+```java
+public class Kata {
+	public static String highAndLow(String numbers) {
+		String[] strNumbers = numbers.split(" ");
+		int max = Integer.parseInt(strNumbers[0]);
+		int min = Integer.parseInt(strNumbers[0]);
+		for (int i = 1; i < strNumbers.length; i++) {
+			if (Integer.parseInt(strNumbers[i]) > max) {
+				max = Integer.parseInt(strNumbers[i]);
+			}
+			if (Integer.parseInt(strNumbers[i]) < min) {
+				min = Integer.parseInt(strNumbers[i]);
+			}
+		}
+		return max + " " + min;
+	}
+}
+```
+
 - Simple beads count
 ```java
 public class BeadsCounter {
