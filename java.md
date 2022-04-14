@@ -276,6 +276,35 @@ public class DigPow {
 }
 ```
 
+- Counting duplicates
+
+```java
+public class CountingDuplicates {
+  public static int duplicateCount(String text) {
+    String repeatedChars = new String();
+    for (int i = 0; i < text.length(); i++) {
+      for (int j = 1; j < text.length(); j++) {
+        if ((text.charAt(i) == text.charAt(j)
+            || text.toUpperCase().charAt(i) == text.charAt(j))
+            && i != j) {
+          repeatedChars += text.charAt(i);
+          j = text.length();
+        }
+      }
+    }
+
+    String nonRepeated = new String();
+    for (int i = 0; i < repeatedChars.length(); i++) {
+      if (nonRepeated.indexOf(repeatedChars.charAt(i)) < 0) {
+        nonRepeated += repeatedChars.charAt(i);
+      }
+    }
+    int counter = nonRepeated.length();
+    return counter;
+  }
+}
+```
+
 - Mexican Wave
 
 ```java
