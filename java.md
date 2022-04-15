@@ -440,6 +440,41 @@ public class FindOdd {
 }
 ```
 
+- Which are in?
+
+```java
+import java.util.Arrays;
+
+public class WhichAreIn {
+	public static String[] inArray(String[] array1, String[] array2) {
+		int arrLen = 0;
+		int index = 0;
+		String resultStr = new String();
+		int counter = 0;
+		for (int i = 0; i < array1.length; i++) {
+			for (int j = 0; j < array2.length; j++) {
+				if (array2[j].contains(array1[i])) {
+					arrLen++;
+					j = array2.length;
+				}
+			}
+		}
+		String[] resultArray = new String[arrLen];
+		for (int i = 0; i < array1.length; i++) {
+			for (int j = 0; j < array2.length; j++) {
+				if (array2[j].contains(array1[i])) {
+					resultArray[index] = array1[i];
+					j = array2.length;
+					index++;
+				}
+			}
+		}
+		Arrays.sort(resultArray);
+		return resultArray;
+	}
+}
+```
+
 - Find the parity outlier
 
 ```java
