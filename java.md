@@ -305,6 +305,48 @@ public class CountingDuplicates {
 }
 ```
 
+- Array.diff
+
+```java
+public class Kata {
+  public static int[] arrayDiff(int[] a, int[] b) {
+    int counter = 0;
+    boolean control = false;
+    for (int i = 0; i < a.length; i++) {
+      for (int j = 0; j < b.length; j++) {
+        if (a[i] == b[j]) {
+          j = b.length;
+          control = true;
+        }
+      }
+      if (!control) {
+        counter++;
+      }
+      control = false;
+    }
+    int[] result = new int[counter];
+    control = false;
+    int index = 0;
+    for (int i = 0; i < a.length; i++) {
+      for (int j = 0; j < b.length; j++) {
+        if (a[i] == b[j]) {
+          j = b.length;
+          control = true;
+        }
+      }
+      if (!control) {
+        result[index] = a[i];
+        index++;
+      }
+      control = false;
+    }
+    System.out.println(counter);
+    return result;
+  }
+}
+```
+
+
 - Mexican Wave
 
 ```java
