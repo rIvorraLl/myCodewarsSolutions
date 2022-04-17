@@ -653,6 +653,39 @@ public class Kata {
 }
 ```
 
+- Give me a Diamond
+
+```java
+class Diamond {
+  public static String print(int n) {
+    String diamond = new String();
+    String space = " ";
+    String asterisk = "*";
+    if (n <= 0 || n % 2 == 0) {
+      diamond = null;
+    } else {
+      int i = 0;
+      int j = 1;
+      while (i < (n / 2) + 1) {
+        diamond += (space.repeat((n / 2) - i)) + (asterisk.repeat(j)) + "\n";
+        i++;
+        j = j + 2;
+      }
+      i = 0;
+      j = 1;
+      int k = 2;
+      while (i < (n / 2)) {
+        diamond += space.repeat(j) + asterisk.repeat(n - k) + "\n";
+        i++;
+        j++;
+        k = k + 2;
+      }
+    }
+    return diamond;
+  }
+}
+```
+
 - Errors: histogram
 
 ```java
