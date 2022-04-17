@@ -276,6 +276,60 @@ public class DigPow {
 }
 ```
 
+- Playing with passphrases
+
+```java
+public class PlayPass {
+	public static String playPass(String s, int n) {
+		String result = new String();
+		String lowerS = "abcdefghijklmnopqrstuvwxyz";
+		String upperS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String numS = "0123456789";
+		boolean control = false;
+		for (int i = 0; i < s.length(); i++) {
+			for (int k = 0; k < upperS.length(); k++) {
+				char upperC = Character.toUpperCase(s.charAt(i));
+				int index = (k + n) % 26;
+				if (i == 0) {
+					if (upperC == upperS.charAt(k)){
+						result += upperS.charAt(index);
+						k = upperS.length();
+						control = true;
+					}					
+				} else if (upperC == upperS.charAt(k)) {
+					if  (i % 2 == 0) {
+						result += upperS.charAt(index);
+						k = upperS.length();
+						control = true;
+					} else if (i % 2 != 0) {
+						result += lowerS.charAt(index);
+						k = upperS.length();
+						control = true;
+					}
+				}
+			}
+			for (int j = 0; j < numS.length(); j++) {
+				if (s.charAt(i) == numS.charAt(j)) {
+					int resNum = (int) (Math.abs(9 - (numS.charAt(j) - '0')));
+					result += resNum + "";
+					j = numS.length();
+					control = true;
+				}
+			}
+			if (!control) {
+				result += s.charAt(i);
+			}
+			control = false;
+		}
+		String returnInversed = new String();
+		for (int j = 0; j < result.length(); j++) {
+			returnInversed = result.charAt(j) + returnInversed;
+		}
+		return returnInversed;
+	}
+}
+```
+
 - Counting duplicates
 
 ```java
