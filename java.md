@@ -775,17 +775,10 @@ public class Solution {
       for (int j = 0; j < numbers.length; j++) {
         if (j != i) {
           if (numbers[i] + numbers[j] == target) {
-            if (i > j) {
-              returnArr[0] = j;
-              returnArr[1] = i;
-              j = numbers.length;
-              i = numbers.length;
-            } else {
-              returnArr[0] = i;
-              returnArr[1] = j;
-              i = numbers.length;
-              j = numbers.length;
-            }
+            returnArr[0] = j;
+            returnArr[1] = i;
+            j = numbers.length;
+            i = numbers.length;
           }
         }
       }
