@@ -765,6 +765,36 @@ public class Prime {
 }
 ```
 
+- Two Sum
+
+```java
+public class Solution {
+  public static int[] twoSum(int[] numbers, int target) {
+    int[] returnArr = new int[2];
+    for (int i = 0; i < numbers.length; i++) {
+      for (int j = 0; j < numbers.length; j++) {
+        if (j != i) {
+          if (numbers[i] + numbers[j] == target) {
+            if (i > j) {
+              returnArr[0] = j;
+              returnArr[1] = i;
+              j = numbers.length;
+              i = numbers.length;
+            } else {
+              returnArr[0] = i;
+              returnArr[1] = j;
+              i = numbers.length;
+              j = numbers.length;
+            }
+          }
+        }
+      }
+    }
+    return returnArr;
+  }
+}
+```
+
 - Count the smiley faces!
 
 ```java
