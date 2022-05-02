@@ -1169,6 +1169,31 @@ class MinMax {
 }
 ```
 
+Jaden Casing
+```java
+
+public class JadenCase {
+
+	public String toJadenCase(String phrase) {
+		String result;
+		if (phrase == null) || phrase == "") {
+			result = null;
+		} else {
+			result = (phrase.charAt(0) + "").toUpperCase();
+			for (int i = 1; i < phrase.length(); i++) {
+				if (phrase.charAt(i) == ' ') {
+					result += (" " + phrase.charAt(i + 1)).toUpperCase();
+					i++;
+				} else {
+					result += phrase.charAt(i);
+				}
+			}
+		}
+		return result;
+	}
+}
+```
+
 - Bumps in the Road
 
 ```java
