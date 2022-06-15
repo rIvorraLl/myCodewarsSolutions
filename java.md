@@ -604,6 +604,37 @@ public class FindOutlier{
 }
 ```
 
+- Sort the odd
+```
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Kata {
+     public static int[] sortArray(int[] array) {
+        int[] result = new int[array.length];
+        ArrayList<Integer> oddNums = new ArrayList<>();
+        boolean cont = true;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                oddNums.add(array[i]);
+            }
+        }
+        System.out.println(oddNums.toString());
+        int index = 0;
+        Collections.sort(oddNums);
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                result[i] = oddNums.get(index);
+                index++;
+            } else {
+                result[i] = array[i];
+            }
+        }
+        return result;
+    }
+}
+```
 - Stop gninnipS My sdroW!
 
 ```java
