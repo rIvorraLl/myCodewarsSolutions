@@ -1,4 +1,4 @@
-# 6 kyu
+# PHP 6 kyu
 
 - Find the parity outlier
 
