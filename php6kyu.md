@@ -48,3 +48,32 @@ function narcissistic(int $value): bool {
     return $result;
 }
 ```
+
+- Detect pangram
+
+
+```php
+function detect_pangram($string)
+{
+    $result = false;
+    $letters = 'abcdefghijklmnopqrstuvwxyz';
+    for ($i = 0; $i < strlen($string); $i ++) {
+        for ($j = 0; $j < strlen($letters); $j ++) {
+            if ($string[$i] >= 'a' && $string[$i] <= 'z' || $string[$i] >= 'A' && $string[$i] <= "Z") {
+                // echo "Value string: $string[$i] Value letters: $letters[$j]\n";
+                if (strtolower($string[$i]) == $letters[$j]) {
+                    $char = $letters[$j];
+                    $letters = substr_replace($letters, '', $j, 1);
+                    $j = strlen($letters);
+                }
+            }
+        }
+    }
+    if (strlen($letters) == 0) {
+        $result = true;
+    }
+    echo $letters;
+    return $result ? 'true' : 'false';
+    // return $result;
+}
+````
