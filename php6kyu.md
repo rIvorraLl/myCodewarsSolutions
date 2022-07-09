@@ -1,5 +1,22 @@
 # PHP 6 kyu
 
+- Find the missing term in an Arithmetic Progression
+
+```php
+function findMissing($list)
+{
+    $difference = ($list[sizeof($list) - 1] - $list[0]) / sizeof($list);
+    $result = null;
+    for ($i = 1; $i < sizeof($list); $i++) {
+        if ($list[$i] - $difference != $list[$i-1]) {
+            $result = $list[$i] - $difference;
+            $i = sizeof($list);
+        }
+    }
+    return $result;
+}
+```
+
 - Find the parity outlier
 
 ```php
