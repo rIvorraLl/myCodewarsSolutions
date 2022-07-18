@@ -33,7 +33,7 @@ function isTwinPrime(n){
 
 - Take a ten minutes walk
 
-```
+```javascript
 function isValidWalk (walk) {
   let result = false;
   if (walk.length > 10 || walk.length < 10) {
