@@ -29,3 +29,32 @@ function isTwinPrime(n){
   }
   return result;
 }
+```
+
+- Take a ten minutes walk
+
+```
+function isValidWalk (walk) {
+  let result = false;
+  if (walk.length > 10 || walk.length < 10) {
+    // pass
+  } else {
+    let coordinates = [5, 5];
+    for (let i = 0; i < 10; i++) {
+      if (walk[i] === 'n') {
+        coordinates[0] = coordinates[0] + 1;
+      } else if (walk[i] === 's') {
+        coordinates[0] = coordinates[0] - 1;
+      } else if (walk[i] === 'e') {
+        coordinates[1] = coordinates[1] + 1;
+      } else {
+        coordinates[1] = coordinates[1] - 1;
+      }
+    }
+    if (coordinates[0] === 5 && coordinates[1] === 5) {
+      result = true;
+    }
+  }
+  return result;
+}
+```
