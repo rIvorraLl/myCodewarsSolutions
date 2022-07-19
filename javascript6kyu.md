@@ -31,6 +31,31 @@ function isTwinPrime(n){
 }
 ```
 
+- Persistent bugger
+
+```javascript
+function persistence (num) {
+  num = '' + num;
+  let counter = 0;
+  let prov = num[0];
+  let control = true;
+  if (num.length > 1) {
+    while (control) {
+      for (let i = 1; i < num.length; i++) {
+        prov = prov * num[i];
+      }
+      counter++;
+      num = '' + prov;
+      prov = num[0];
+      if (num.length <= 1 || counter > 20) {
+        control = false;
+      }
+    }
+  }
+  return counter;
+}
+```
+
 - Take a ten minutes walk
 
 ```javascript
