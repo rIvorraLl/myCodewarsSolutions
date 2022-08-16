@@ -83,3 +83,21 @@ function isValidWalk (walk) {
   return result;
 }
 ```
+
+- Break camelCase
+
+```javascript
+function solution(string) {
+  let result = '';
+  if (string.length != 0) {
+    for (let index = 0; index < string.length; index++) {
+      if (string.charAt(index) === string.charAt(index).toUpperCase()) {
+        result += ' ' + string.charAt(index);
+      } else {
+        result += string.charAt(index);
+      }
+    }
+  }
+  return result;
+}
+```
