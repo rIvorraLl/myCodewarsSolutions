@@ -1,5 +1,23 @@
 # PHP 6 kyu
 
+- Matrix Addition
+
+```php
+function matrix_addition(array $a, array $b): array {
+    $result = [];
+    $tempArray = [];
+    for ($i = 0; $i < count($a); $i++) {
+        for ($j = 0; $j < count($a[$i]); $j++) {
+            $sum = $a[$i][$j] + $b[$i][$j];
+            $tempArray[] = $sum;
+        }
+        $result[] = $tempArray;
+        $tempArray = [];
+    }
+    return $result;
+}
+```
+
 - Find the missing term in an Arithmetic Progression
 
 ```php
