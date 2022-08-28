@@ -94,3 +94,31 @@ function detect_pangram($string)
     // return $result;
 }
 ````
+
+- Make the Deadfish Swim
+
+```php
+function parse($data)
+{
+    $result = [];
+    $value = 0;
+    if (strlen($data) !== 0) {
+        for ($i = 0; $i < strlen($data); $i ++) {
+            $char = substr($data, ($i), 1);
+            switch ($char) {
+                case 'i':
+                    $value ++;
+                    break;
+                case 'd':
+                    $value --;
+                    break;
+                case 's':
+                    $value = $value * $value;
+                    break;
+                case 'o':
+                    $result[] = $value;            }
+        }
+    }
+    return $result;
+}
+```
