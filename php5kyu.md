@@ -17,3 +17,21 @@ function moveZeros(array $items): array
     return array_merge($noZerosArray, $zerosArray);
 }
 ```
+
+- The Hashtag Generator
+
+```php
+function generateHashtag($str) {
+  $result = null;
+  if (strlen($str) == 0 || strlen(str_replace(' ', '', $str)) == 0) {
+    $result = false;
+  } else if (strlen($str) > 0 ) {
+    $result = '#' . ucwords($str);
+    $result = str_replace(' ', '', $result);
+  }
+  if (strlen($result) > 140) {
+    $result = false;
+  }
+  return $result;
+}
+```
