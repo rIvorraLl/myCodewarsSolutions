@@ -35,6 +35,17 @@ function findMissing($list)
 }
 ```
 
+- IP Validation
+
+```php
+function isValidIP(string $str): bool
+{
+    $ip_regex = "/^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$/";
+    return preg_match($ip_regex, $str);
+}
+
+```
+
 - Find the parity outlier
 
 ```php
