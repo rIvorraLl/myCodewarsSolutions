@@ -16,3 +16,17 @@ function solution(string $s) : int
     return (int)$result;
 }
 ```
+
+- Geometric Progression Sequence
+
+```php
+function geometric_sequence_elements(int $a, int $r, int $n): string {
+  $incremented = $a;
+  $result = $a . ', ';
+  for ($i = 1; $i < $n; $i++) {
+    $incremented = $incremented * $r;
+    $i < $n - 1 ? $result = $result . $incremented . ', ' : $result = $result . $incremented;
+  }
+  return $result;
+}
+```
