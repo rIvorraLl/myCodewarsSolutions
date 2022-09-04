@@ -35,3 +35,24 @@ function generateHashtag($str) {
   return $result;
 }
 ```
+
+- Where my anagrams at?
+
+```php
+function anagrams(string $word, array $words): array {
+    $arr_word = str_split($word);
+    sort($arr_word);
+    implode($arr_word);
+    $words_copy = $words;
+    $result = [];
+    foreach ($words_copy as $word) {
+        $split_str = str_split($word);
+        sort($split_str);
+        implode($split_str);
+        if ($arr_word == $split_str) {
+            $result[] = $word;
+        }
+    }
+    return $result;
+}
+```
