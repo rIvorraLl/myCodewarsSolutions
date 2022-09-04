@@ -30,3 +30,21 @@ function geometric_sequence_elements(int $a, int $r, int $n): string {
   return $result;
 }
 ```
+
+- Exes and Ohs
+
+```php
+function XO($s) {
+    $x = 0;
+    $o = 0;
+    $s = strtolower($s);
+    for ($i = 0; $i < strlen($s); $i++) {
+        if (substr($s, $i, 1) == 'o') {
+            $o++;
+        } else if (substr($s, $i, 1) == 'x') {
+            $x++;
+        }
+    }
+    return $x == $o;
+}
+```
