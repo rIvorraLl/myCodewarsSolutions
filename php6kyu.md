@@ -151,3 +151,23 @@ function parse($data)
     return $result;
 }
 ```
+
+- Find the missing letter
+
+```php
+function find_missing_letter(array $array): string {
+    $letters = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+    $returnLetter = '';
+    for ($i = 0; $i < count($array); $i++) {
+        for ($j = 0; $j < count($letters); $j++) {
+            if ($array[$i] == $letters[$j] && $array[$i + 1] != $letters[$j + 1]) {
+                $returnLetter = $letters[$j + 1];
+                $j = count($letters);
+                $i = count($array);
+            }
+        }
+    }
+    return $returnLetter;
+}
+```
