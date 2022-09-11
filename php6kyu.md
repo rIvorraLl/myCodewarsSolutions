@@ -171,3 +171,21 @@ function find_missing_letter(array $array): string {
     return $returnLetter;
 }
 ```
+
+- Replace With Alphabet Position
+
+```php
+function alphabet_position(string $s): string {
+    $letters = 'abcdefghijklmnopqrstuvwxyz';
+    $result = '';
+    for ($i = 0; $i < strlen($s); $i++) {
+        for ($j = 0; $j < strlen($letters); $j++) {
+            if (strtolower($s[$i]) === $letters[$j]) {
+                $result .= $j + 1 . ' ';
+                $j = strlen($letters);               
+            }
+        }
+    }
+    return rtrim($result);
+}
+```
