@@ -189,3 +189,21 @@ function alphabet_position(string $s): string {
     return rtrim($result);
 }
 ```
+
+- Unique In Order
+
+```php
+function uniqueInOrder($iterable){
+  if (empty($iterable)) {
+    return array();
+  }
+  $len = (gettype($iterable) == 'array') ? count($iterable) : strlen($iterable);
+  $resultArr = [$iterable[0]];
+  for ($i = 1; $i < $len; $i++) {
+    if ($iterable[$i] != $iterable[$i-1]) {
+      array_push($resultArr, $iterable[$i]);
+    }
+  }
+  return $resultArr;
+}
+```
