@@ -207,3 +207,22 @@ function uniqueInOrder($iterable){
   return $resultArr;
 }
 ```
+
+- Convert string to camel case
+
+```php
+function toCamelCase($str) {
+  $result = '';
+  if (strlen($str) > 0) {
+    for ($i = 0; $i < strlen($str); $i++) {
+      if ($str[$i] == '-' || $str[$i] == '_') {
+        $result .= strtoupper($str[$i+1]);
+        $i++;
+      } else {
+        $result .= $str[$i];
+      }
+    }
+  }
+  return $result;
+}
+```
