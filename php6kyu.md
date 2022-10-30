@@ -208,6 +208,35 @@ function uniqueInOrder($iterable){
 }
 ```
 
+- Exclamation marks series #17: Put the exclamation marks and question marks on the balance - are they balanced?
+
+```php
+function add(string $str) {
+    $total = 0;
+    $strArr = str_split($str);
+    foreach ($strArr as $letter) {
+      if ($letter === '!') {
+        $total += 2;
+      } else if ($letter === '?') {
+        $total += 3;
+      }
+    }
+    return $total;
+}
+
+function balance(string $l, string $r): string {
+  $left = add($l);
+  $right = add($r);
+  $result = '';
+  if ($left === $right) {
+    $result = 'Balance';
+  } else {
+    ($left > $right) ? $result = 'Left' : $result = 'Right';
+  }
+  return $result;
+}
+```
+
 - Convert string to camel case
 
 ```php
