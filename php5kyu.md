@@ -56,3 +56,35 @@ function anagrams(string $word, array $words): array {
     return $result;
 }
 ```
+
+- Human Readable Time
+
+```php
+function human_readable($seconds) {
+    $result = '';
+    if ($seconds > 0) {
+        $hours = (integer)($seconds / 3600);
+        $minutesLeft = (integer)($seconds % 3600);
+        $minutes = (integer)($minutesLeft / 60);
+        $secondsLeft = (integer)($seconds % 60);
+        if ($hours < 10) {
+            $result .= '0' . $hours . ':';
+        } else {
+            $result .= $hours . ':';
+        }
+        if ($minutes < 10) {
+            $result .= '0' . $minutes . ':';
+        } else {
+            $result .= $minutes . ':';
+        }
+        if ($secondsLeft < 10) {
+            $result .= '0' . $secondsLeft;
+        } else {
+            $result .= $secondsLeft;
+        }
+    } else {
+        $result = '00:00:00';
+    }
+    return $result;
+}
+```
