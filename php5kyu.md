@@ -36,6 +36,36 @@ function generateHashtag($str) {
 }
 ```
 
+- Write Number in Expanded Form
+
+```php
+function expanded_form(int $n): string {
+    $len = (string) strlen($n);
+    $altCounter = $len;
+    $endIndex = $len;
+    $numArr = str_split((string) $n);
+    $result = '';
+    if ($len > 1) {
+        for ($i = 0; $i < $altCounter - 1; $i++) {
+            if ($numArr[$i] != 0) {
+                $result .= $numArr[$i] * pow(10, $len - 1) . ' + ';
+                $len--;
+            } else {
+                $len--;
+            }
+        }
+        if ($numArr[$endIndex - 1] != 0) {
+            $result .= $numArr[$endIndex - 1];
+        } else {
+            $result = substr($result, 0, - 3);
+        }
+    } else {
+        $result = (string) $n;
+    }
+    return $result;
+}
+```
+
 - Where my anagrams at?
 
 ```php
