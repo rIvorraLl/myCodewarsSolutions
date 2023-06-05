@@ -48,3 +48,19 @@ function XO($s) {
     return $x == $o;
 }
 ```
+
+- Simple remove duplicates
+
+```php
+function solve($arr)
+{
+    $sorted = [];
+    for (($i = count($arr) - 1); $i > -1; $i--) {
+        if (!in_array($arr[$i], $sorted)) {
+            $sorted[$i] = $arr[$i];
+        }
+    }
+    $result = array_reverse($sorted);
+    return $result;
+}
+
