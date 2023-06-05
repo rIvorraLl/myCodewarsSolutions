@@ -118,3 +118,13 @@ function human_readable($seconds) {
     return $result;
 }
 ```
+
+- Not very secure
+
+```php
+function alphanumeric(string $s): bool
+{
+    $regex = "/^[a-zA-Z0-9]+$/";
+    return preg_match($regex, $s);
+}
+```
