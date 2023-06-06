@@ -255,3 +255,35 @@ function toCamelCase($str) {
   return $result;
 }
 ```
+
+- Character with longest consecutive repetition
+
+```php
+function longestRepetition($s)
+{
+    $provCounter = 1;
+    $counter = 0;
+    $char = '';
+    $len = strlen($s);
+    if (strlen($s) === 0) {
+        return ["", 0];
+    } else {
+        for ($i = 0; $i < $len; $i++) {
+            for ($j = $i+1; $j < $len; $j++) {
+                if ($s[$i] === $s[$j]) {
+                    $provCounter++;
+                } else {
+                    break;
+                }
+            }
+            if ($provCounter > $counter) {
+                $counter = $provCounter;
+                $char = $s[$i];
+            }
+            $provCounter = 1;
+        }
+    }
+    return [$char, $counter];
+}
+
+
