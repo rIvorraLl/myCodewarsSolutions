@@ -1160,7 +1160,7 @@ public class Kata {
 
 - Find the index of the second occurrence of a letter in a string
 
-```
+```java
 public class SecondOcurrence {
   public static int secondSymbol(String str, char c) {
     int counter = 0;
