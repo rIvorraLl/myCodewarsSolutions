@@ -1,6 +1,6 @@
 - Pillars
 
-```
+```php
 function pillars($numberOfPillars, $dist, $width)
 {
   if ($numberOfPillars > 1)
