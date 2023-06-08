@@ -76,7 +76,7 @@ function solve($arr)
     $result = array_reverse($sorted);
     return $result;
 }
-
+```
 
 - Bubblesort Once
 
@@ -92,6 +92,6 @@ function bubblesort_once($a) {
   }
   return $b;
 }
-
+```
 
 
