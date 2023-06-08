@@ -49,6 +49,19 @@ function XO($s) {
 }
 ```
 
+- Return the closest multiple of 10
+
+```php
+function closest_multiple_10($n) {
+  $result;
+  $n % 10 < 5
+    ? $result = $n - ($n % 10)
+    : $result = $n + (10 - $n % 10);
+  return $result;
+}
+```
+
+
 - Simple remove duplicates
 
 ```php
@@ -63,4 +76,21 @@ function solve($arr)
     $result = array_reverse($sorted);
     return $result;
 }
+
+- Bubblesort Once
+
+```php
+function bubblesort_once($a) {
+  $b = $a;
+  for ($i = 0; $i < count($b) - 1; $i++) {
+    if ($b[$i] > $b[$i + 1]) {
+      $prov = $b[$i];
+      $b[$i] = $b[$i + 1];
+      $b[$i + 1] = $prov;
+    }
+  }
+  return $b;
+}
+
+
 
