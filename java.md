@@ -1158,6 +1158,25 @@ public class Kata {
 }
 ```
 
+- Find the index of the second occurrence of a letter in a string
+
+```
+public class SecondOcurrence {
+  public static int secondSymbol(String str, char c) {
+    int counter = 0;
+    for (int i = 0; i < str.length(); i++) {
+      if (str.charAt(i) == c) {
+        counter++;
+        if (counter == 2) {
+          return i;
+        }
+      }
+    }
+    return -1;
+  }
+}
+```
+
 - Exclamation marks series #8: Move all exclamation marks to the end of the sentence
 
 ```java
