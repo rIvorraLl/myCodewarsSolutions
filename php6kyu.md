@@ -285,5 +285,33 @@ function longestRepetition($s)
     }
     return [$char, $counter];
 }
+```
+
+- Consonant value
+
+```php
+function solve($s)
+{
+    $letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
+    'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    ];
+    $vowels = ['a', 'e', 'i', 'o', 'u'];
+    $replaced = str_replace($vowels, ',', $s);
+    $string_to_arr = explode(',', $replaced);
+    $provisional_value = 0;
+    $higher = 0;
+    foreach($string_to_arr as $item) {
+        for ($i = 0; $i < strlen($item); $i++) {
+            $provisional_value += array_search($item[$i], $letters) + 1;
+        }
+        if ($provisional_value > $higher) {
+            $higher = $provisional_value;
+        }
+        $provisional_value = 0;
+    }
+    return $higher;
+}
+```
 
 
