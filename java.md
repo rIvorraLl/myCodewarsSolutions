@@ -1034,6 +1034,35 @@ public class Kata {
 }
 ```
 
+- Anagram detection
+
+```java
+import java.util.Arrays;
+
+public class Kata {
+	public static boolean isAnagram(String test, String original) {
+		String originalToLower = original.toLowerCase();
+		String testToLower = test.toLowerCase();
+		char originalToCharArr[] = originalToLower.toCharArray();
+		char testToCharArr[] = testToLower.toCharArray();
+		String newOriginal = "";
+		String newTest = "";
+		Arrays.sort(originalToCharArr);
+		for (int i = 0; i < originalToCharArr.length; i++) {
+			newOriginal += originalToCharArr[i];
+		}
+		Arrays.sort(testToCharArr);
+		for (int i = 0; i < test.length(); i++) {
+			newTest += testToCharArr[i] ;
+		}
+		if (newOriginal.equals(newTest)) {
+			return true;
+		}
+		return false;
+	}
+}
+```
+
 - Disemvowel Trolls
 
 ```java
