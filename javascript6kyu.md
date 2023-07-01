@@ -31,6 +31,23 @@ function isTwinPrime(n){
 }
 ```
 
+- Transpose a matrix
+
+```javascript
+function transpose(matrix) {
+  const result = [];
+  let row = [];
+  for (let i = 0; i < matrix[0].length; i++) {
+    for (let j = 0; j < matrix.length; j++) {
+      row.push(matrix[j][i]);
+    }
+    result.push(row);
+    row = [];
+  }
+  return result;
+}
+```
+
 - Persistent bugger
 
 ```javascript
