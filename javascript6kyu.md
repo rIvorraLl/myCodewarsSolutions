@@ -118,3 +118,21 @@ function solution(string) {
   return result;
 }
 ```
+
+- All Star Code Challenge # 15
+
+```javascript
+function rotate(str) {
+  let exploded = str.split('');
+  const result = [];
+  let temp = '';
+  for (let i = 0; i < str.length; i++) {
+    exploded.push(exploded[0]);
+    exploded[0] = '';
+    temp = exploded.join('');
+    result.push(temp);
+    exploded = temp.split('');
+  }
+  return result;
+}
+```
