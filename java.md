@@ -1063,6 +1063,17 @@ public class Kata {
 }
 ```
 
+- Leap Years
+
+```java
+public class LeapYears {
+
+  public static boolean isLeapYear(int year) {
+    return (year % 100 == 0 && year % 400 != 0) ? false : year % 4 == 0;
+  }
+}
+```
+
 - Disemvowel Trolls
 
 ```java
