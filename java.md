@@ -433,6 +433,25 @@ public class DRoot {
 }
 ```
 
+- Collatz
+
+```java
+public class Collatz {
+	public static String collatz(int n) {
+		String result = n + "";
+		while (n != 1) {
+			if (n % 2 == 0) {
+				n = n / 2;
+				result += "->" + n;
+			} else {
+				n = n * 3 + 1;
+				result += "->" + n;
+			}
+		}
+		return result;
+	}
+}
+```
 
 - Mexican Wave
 
