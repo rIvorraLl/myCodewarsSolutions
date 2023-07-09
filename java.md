@@ -400,6 +400,39 @@ public class Kata {
 }
 ```
 
+- Sum of Digits / Digital Root
+
+```java
+public class DRoot {
+	public static int[] getNumbersArray(int n) {
+		String numberToStr = Integer.toString(n);
+		int[] numsArr = new int[numberToStr.length()];
+		for (int i = 0; i < numberToStr.length(); i++) {
+			String ch = Character.toString(numberToStr.charAt(i));
+			Integer num = Integer.valueOf(ch);
+			numsArr[i] = num;
+		}
+		return numsArr;
+	}
+
+	public static int sumArr(int[] arr) {
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		return sum;
+	}
+
+	public static int digital_root(int n) {
+		int result = sumArr(getNumbersArray(n));
+		while (result > 9) {
+			result = sumArr(getNumbersArray(result));
+		}
+		return result;
+	}
+}
+```
+
 
 - Mexican Wave
 
