@@ -453,6 +453,25 @@ public class Collatz {
 }
 ```
 
+- Multiplication table
+
+```java
+public class Multiplication{
+	public static int[][] multiplicationTable(int n) {
+		int[][] result = new int[n][n];
+		int[] row = new int[n];
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				row[j] = (i + 1) * (j + 1);
+			}
+			result[i] = row;
+			row = new int[n];
+		}
+		return result;
+	}
+}
+```
+
 - Mexican Wave
 
 ```java
