@@ -136,3 +136,20 @@ function rotate(str) {
   return result;
 }
 ```
+
+- Find the mine!
+
+```javascript
+function mineLocation(field) {
+  const result = [];
+  for (let i = 0; i < field.length; i++) {
+    for (let j = 0; j < field[i].length; j++) {
+      if (field[i][j] === 1) {
+        result[0] = i;
+        result[1] = j;
+      }
+    }
+  }
+  return result;
+}
+```
