@@ -153,3 +153,27 @@ function mineLocation(field) {
   return result;
 }
 ```
+
+- Duplicate Encoder
+
+```javascript
+function countLetters(word, index) {
+  const wordLower = word.toLowerCase();
+  let counter = 0;
+  for (let i = 0; i < wordLower.length; i++) {
+    if (wordLower.charAt(index) === wordLower.charAt(i)) {
+      counter++;
+    }
+  }
+  return counter;
+}
+
+function duplicateEncode(word) {
+  let result = '';
+  for (let i = 0; i < word.length; i++) {
+    const counter = countLetters(word, i);
+    counter === 1 ? result += '(' : result += ')';
+  }
+  return result;
+}
+```
