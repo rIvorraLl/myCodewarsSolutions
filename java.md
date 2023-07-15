@@ -60,6 +60,60 @@ public class LargestDifference {
 }
 ```
 
+- String incrementer
+
+```java
+import java.math.BigInteger;
+
+public class Kata {
+	public static String incrementString(String str) {
+		if (str == "") {
+			return "1";
+		}
+		String number = new String();
+		char lastChar = str.charAt(str.length() - 1);
+		if (! Character.isDigit(lastChar)) {
+			return str + "1";
+		} else {
+			int counter = str.length();
+			while (Character.isDigit(str.charAt(counter - 1))) {
+				counter--;
+				if (counter == 0) {
+					break;
+				}
+			}
+			String substrEnd = str.substring(counter);
+			String substrStart = str.substring(0, counter);
+			String leadingZeros = new String();
+			for (int i = 0; i < substrEnd.length(); i++) {
+				if (substrEnd.charAt(i) == '0') {
+					leadingZeros += "0";
+				} else {
+					i = substrEnd.length();
+				}
+			}
+			BigInteger endNumber = new BigInteger(substrEnd);
+			boolean isAllZero = true;
+			for (int i = 0; i < substrEnd.length(); i++) {
+				if (substrEnd.charAt(i) != '0') {
+					isAllZero = false;
+				}
+			}
+			String endNumToStr = endNumber.toString();
+			BigInteger one = new BigInteger("1");
+			endNumber = endNumber.add(one);
+			String endPlusOne = endNumber.toString();
+			if (endPlusOne.length() > endNumToStr.length()
+					&& leadingZeros.length() > 0
+					|| isAllZero) {
+				leadingZeros = leadingZeros.substring(0, leadingZeros.length() - 1);
+			}
+			return substrStart + leadingZeros + endNumber;
+		}
+	}
+}
+```
+
 - Simple pig latin
 
 ```java
