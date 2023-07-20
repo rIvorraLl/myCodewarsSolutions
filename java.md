@@ -593,6 +593,28 @@ class SumParts {
 }
 ```
 
+- Even Fibonacci Sum
+
+```java
+class Kata {
+    public static long fibonacci(long max) {
+        long result = 0;
+        long prov = 1;
+        long first = 1;
+        long second = 2;
+        while (prov < max) {
+        	if (prov % 2 == 0) {
+        		result += prov;
+        	}
+        	first = second;
+        	second = prov + second;
+        	prov = first;
+        }
+        return result;
+    }
+}
+```
+
 - Upside down
 
 ```java
