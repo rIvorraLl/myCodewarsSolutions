@@ -646,6 +646,38 @@ public class UpsideDown {
 }
 ```
 
+- Triple trouble
+
+```java
+public class Kata
+{
+	public static int TripleDouble(long num1, long num2) {
+		String n1toStr = Long.toString(num1);
+		String n2toStr = Long.toString(num2);
+		boolean n1HasTriple = false;
+		boolean n2HasDouble = false;
+		char numToCheck = 0;
+		for (int i = 0; i < n1toStr.length() - 2; i++) {
+			if (n1toStr.charAt(i) == n1toStr.charAt(i + 1) && n1toStr.charAt(i) == n1toStr.charAt(i + 2)) {
+				n1HasTriple = true;
+				numToCheck = n1toStr.charAt(i);
+			}
+		}
+		if (n1HasTriple) {
+			for (int i = 0; i < n2toStr.length() - 1; i++) {
+				if (n2toStr.charAt(i) == numToCheck && n2toStr.charAt(i) == n2toStr.charAt(i + 1)) {
+					n2HasDouble = true;
+				}
+			}
+		}
+		if (n1HasTriple && n2HasDouble) {
+			return 1;
+		}
+		return 0;
+	}
+}
+```
+
 - Find the odd int
 
 ```java
