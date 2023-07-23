@@ -678,6 +678,26 @@ public class Kata
 }
 ```
 
+- What century is it?
+
+```java
+public class Solution{
+    public static String whatCentury(int year) {
+        int century = year / 100;
+        if (year % 100 > 0) {
+        	century += 1;
+        }
+        String centuryStr = Integer.toString(century);
+        String strEnd = "th";
+        String[] strEndArr = {"th", "st", "nd", "rd"};
+        if (century % 10 < 4 && year > 2000) {
+        	strEnd = strEndArr[century % 10];
+        }
+        return centuryStr + strEnd;
+    }
+}
+```
+
 - Find the odd int
 
 ```java
