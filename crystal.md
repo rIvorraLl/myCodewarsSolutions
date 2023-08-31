@@ -2,7 +2,7 @@
 
 - Cats and shelves
 
-  ```crystal
+```crystal
   def cats(start, finish)
     diff = finish - start
     if diff % 3 == 0
@@ -15,4 +15,35 @@
     end
     diff
   end
-  ```
+```
+
+  - Simple Fun #10: Range Bit Counting
+
+```crystal
+def get_binary_digits(int)
+  arr = [] of Int32
+  while int // 2 > 0
+    n = (int % 2).to_i
+    arr << n
+    int = int // 2
+  end
+  n = (int % 2).to_i
+  arr << n
+  arr
+end
+
+def range_bit_count(a, b)
+  counter = 0
+  range_num = a .. b
+  range_num.each do |value|
+    to_binary = get_binary_digits(value)
+    to_binary.each do |item|
+        if item == 1
+            counter += 1
+        end
+    end
+  end
+  counter
+end
+```
+
