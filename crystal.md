@@ -65,4 +65,16 @@ def paperwork(n, m)
 end
 ```
 
+- Find the smaller integer in the array
 
+```crystal
+def find_smallest_int(arr)
+  smallest = arr[0]
+  arr.each do |num|
+    if num < smallest
+      smallest = num
+    end
+  end
+  smallest
+end
+```
