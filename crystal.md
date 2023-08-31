@@ -150,3 +150,11 @@ def stringy(size)
     result
   end
 ```
+
+- Remove first and last characters
+
+```crystal
+def remove_char(s : String)
+  s = s[1..s.size - 2]
+end
+```
