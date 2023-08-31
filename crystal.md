@@ -47,3 +47,14 @@ def range_bit_count(a, b)
 end
 ```
 
+**8 kyu**
+
+- Determine offspring sex based on genes XX and XY chromosomes
+
+```crystal
+def chromosome_check(sperm)
+  result = sperm == "XX" ? "Congratulations! You're going to have a daughter." : "Congratulations! You're going to have a son."
+end
+```
+
+
