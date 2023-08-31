@@ -35,6 +35,25 @@ end
   end
 ```
 
+- Disemvowel trolls
+
+```crystal
+def is_vowel(char)
+  char = char.downcase
+  return char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'
+end
+
+def disemvowel(str)
+  result = ""
+  str.each_char do |char|
+    if !is_vowel(char)
+      result += char
+    end
+  end
+  result
+end
+```
+
   - Simple Fun #10: Range Bit Counting
 
 ```crystal
@@ -115,4 +134,19 @@ def find_smallest_int(arr)
   end
   smallest
 end
+```
+
+- Stringy strings
+
+```crystal
+def stringy(size)
+    result = ""
+    i = 0
+    while i < size
+        char = i % 2 == 0 ? "1" : "0"
+        result += char
+        i += 1
+    end
+    result
+  end
 ```
