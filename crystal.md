@@ -1,3 +1,21 @@
+**6 kyu**
+
+- Multiples of 3 or 5
+
+```crystal
+def solution(number : Int32)
+  i = 3
+  sum = 0
+  while i < number
+    if i % 3 == 0 || i % 5 == 0
+      sum += 1
+    end
+    i += 1
+  end
+  sum
+end
+```
+
 **7 kyu**
 
 - Cats and shelves
