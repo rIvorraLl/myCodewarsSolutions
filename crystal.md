@@ -49,6 +49,26 @@ end
 
 **8 kyu**
 
+- Vowel count
+
+```crystal
+def get_vowel_count(str)
+    counter = 0
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    i = 0
+    while i < str.size
+        vowel = str[i]
+        vowels.each do |item|
+            if item == vowel
+                counter += 1
+            end
+        end
+        i += 1
+    end
+    counter
+  end
+```
+
 - Determine offspring sex based on genes XX and XY chromosomes
 
 ```crystal
