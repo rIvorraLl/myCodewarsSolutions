@@ -57,4 +57,12 @@ def chromosome_check(sperm)
 end
 ```
 
+- Beginner Series #1 School Paperwork
+
+```crystal
+def paperwork(n, m)
+  n > 0 && m > 0 ? n * m : 0
+end
+```
+
 
