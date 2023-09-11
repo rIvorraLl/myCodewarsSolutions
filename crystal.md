@@ -1,5 +1,36 @@
 **6 kyu**
 
+- What's A Name In?
+
+```crystal
+def name_in_str(str, name)
+  if (str.size < name.size)
+    return false
+  end
+  str_dwn = str.downcase
+  name_up = name.downcase
+  char_in_str = false
+  i = 0
+  j = 0
+  while (i < name_up.size)
+    while (j < str_dwn.size)
+      if (name_up.char_at(i) == str_dwn.char_at(j))
+        char_in_str = true
+        j += 1
+        break
+      end
+      j += 1
+    end
+    if (char_in_str == false)
+      return false
+    end
+    i += 1
+    char_in_str = false
+  end
+  return true
+end
+```
+
 - Multiples of 3 or 5
 
 ```crystal
