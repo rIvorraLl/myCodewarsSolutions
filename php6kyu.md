@@ -314,4 +314,21 @@ function solve($s)
 }
 ```
 
+- Pyramid Array
 
+```php
+function pyramid($n) {
+  $result = [];
+  $provArr = [];
+  $k = 0;
+  for ($i = 0; $i < $n; $i++) {
+    $k++;
+    for ($j = 0; $j < $k; $j++) {
+      $provArr[$j] = 1;
+    }
+    $result[$i] = $provArr;
+    $provArr = [];
+  }
+  return $result;
+}
+```
