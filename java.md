@@ -507,6 +507,24 @@ public class Collatz {
 }
 ```
 
+- Calculate String Rotation
+
+```java
+public class CalculateRotation {
+  static int shiftedDiff(String first, String second) {
+	int rotation = 0;
+	while (!first.equals(second)) {
+	    first = first.substring(first.length() - 1, first.length()) + first.substring(0, first.length() - 1);
+	    rotation++;
+	    if (rotation == first.length()) {
+		    return -1;
+	    }
+	}
+	return rotation;
+  }
+}
+```
+
 - Multiplication table
 
 ```java
