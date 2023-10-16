@@ -716,6 +716,37 @@ public class Solution{
 }
 ```
 
+- Circularly Sorted Array
+
+```java
+public class CircleSorted {
+    public boolean isCircleSorted(int[] a) {
+	int min = a[0];
+	int start = 0;
+	for (int i = 1; i < a.length; i++) {
+	    if (a[i] < min) {
+		min = a[i];
+		start = i;
+	    }
+	}
+	int[] reconstructed = new int[a.length];
+	int k = 0;
+	for (int i = start; i < a.length; i++) {
+	    reconstructed[k] = a[i];
+	    k++;
+	}
+	if (start != 0) {
+	    for (int i = 0; i < start; i++) {
+		reconstructed[k] = a[i];
+		k++;
+	    }
+	}
+	Arrays.sort(a);
+	return Arrays.equals(a, reconstructed);
+    }
+}
+```
+
 - Find the odd int
 
 ```java
