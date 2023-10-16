@@ -1919,6 +1919,18 @@ public class Kata {
 }
 ```
 
+- Get the Middle Character
+
+```java
+class Kata {
+    public static String getMiddle(String word) {
+	  String result = word.length() % 2 == 0 ? word.substring(word.length() / 2 - 1, word.length() / 2 + 1)
+		  : word.substring(word.length() / 2, word.length() / 2 + 1);
+	  return result;
+    }
+}
+```
+
 - Largest pair sum in array
 
 ```java
