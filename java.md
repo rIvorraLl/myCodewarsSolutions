@@ -330,6 +330,54 @@ public class DigPow {
 }
 ```
 
+- Not prime numbers
+
+```java
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Solution {
+    public boolean isPrime(int num) {
+	if (num <= 1) {
+	    return false;
+	}
+	double nn = Math.sqrt(num);
+	int n = (int) nn + 1;
+	for (int i = 2; i < n; i++) {
+	    if (num % i == 0) {
+		return false;
+	    }
+	}
+	return true;
+    }
+
+    public boolean checkDigits(int num) {
+	while (num > 0) {
+	    int digit = num % 10;
+	    if (!isPrime(digit)) {
+		return false;
+	    }
+	    num = num / 10;
+	}
+	return true;
+    }
+
+    public static List<Integer> notPrimes(int a, int b) {
+	Solution s = new Solution();
+	ArrayList<Integer> result = new ArrayList<Integer>();
+	for (int i = a; i < b; i++) {
+	    boolean numIsPrime = s.isPrime(i);
+	    boolean digitsArePrime = s.checkDigits(i);
+	    if (!numIsPrime && digitsArePrime) {
+		result.add(i);
+	    }
+	}
+	return result;
+    }
+}
+```
+
 - Playing with passphrases
 
 ```java
