@@ -1116,6 +1116,36 @@ public class Solution {
 }
 ```
 
+- Count characters in your string
+
+```java
+import java.util.Map;
+import java.util.HashMap;
+
+
+public class Kata {
+    public static Map<Character, Integer> count(String str) {
+	    HashMap<Character, Integer> result = new HashMap<Character, Integer>();
+      if (str.length() == 0) {
+        return result;
+      }
+      String[] split = str.split("");
+      for (String s : split) {
+          if (Character.isAlphabetic(s.charAt(0))) {
+            if (result.get(s.charAt(0)) == null) {
+                result.put(s.charAt(0), 1);
+
+            } else {
+                int value = result.get(s.charAt(0));
+                result.put(s.charAt(0), value + 1);
+            }
+          }
+      }
+    return result;
+    }
+}
+```
+
 - Find the unique number
 
 ```java
