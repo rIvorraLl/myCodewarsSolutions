@@ -1400,6 +1400,24 @@ public class LeapYears {
 }
 ```
 
+- Growth of a Population
+
+```java
+class Arge {
+
+    public static int nbYear(int p0, double percent, int aug, int p) {
+	int yearsToGoal = 0;
+	int currentPopulation = p0;
+	double percentIndex = percent / 100;
+	while (currentPopulation < p) {
+	    currentPopulation = (int) (currentPopulation * percentIndex) + aug + currentPopulation;
+	    yearsToGoal++;
+	}
+	return yearsToGoal;
+    }
+}
+```
+
 - Disemvowel Trolls
 
 ```java
