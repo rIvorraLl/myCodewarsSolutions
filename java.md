@@ -832,6 +832,28 @@ public class FindOdd {
 }
 ```
 
+- Data Reverse
+
+```java
+public class Kata {
+    public static int[] DataReverse(int[] data) {
+      int[] reversed = new int[data.length];
+      int begin = data.length - 8;
+      int end = data.length;
+      int index = 0;
+      for (int i = 0; i < data.length / 8; i++) {
+          for (int j = begin; j < end; j++) {
+        reversed[index] = data[j];
+        index++;
+        }
+        begin = begin - 8;
+        end = end - 8;
+      }
+      return reversed;
+    }
+}
+```
+
 - Which are in?
 
 ```java
