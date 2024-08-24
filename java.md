@@ -1178,6 +1178,32 @@ public class Solution {
 }
 ```
 
+- Good vs Evil
+
+```java
+public class GoodVsEvil {
+	public static String battle(String goodAmounts, String evilAmounts) {
+		String[] goodAmountsArr = goodAmounts.split(" ");
+		String[] evilAmountsArr = evilAmounts.split(" ");
+		int[] goodRacesWorth = { 1, 2, 3, 3, 4, 10 };
+		int[] evilRacesWorth = { 1, 2, 2, 2, 3, 5, 10 };
+		int goodTotalWorth = totalWorth(goodAmountsArr, goodRacesWorth);
+		int eviltTotalWorth = totalWorth(evilAmountsArr, evilRacesWorth);
+		return goodTotalWorth == eviltTotalWorth ? "Battle Result: No victor on this battle field"
+				: (goodTotalWorth < eviltTotalWorth ? "Battle Result: Evil eradicates all trace of Good"
+						: "Battle Result: Good triumphs over Evil");
+	}
+
+	private static int totalWorth(String[] amounts, int[] racesWorth) {
+		int result = 0;
+		for (int i = 0; i < amounts.length; i++) {
+			result += racesWorth[i] * Integer.parseInt(amounts[i]);
+		}
+		return result;
+	}
+}
+```
+
 - Count the smiley faces!
 
 ```java
