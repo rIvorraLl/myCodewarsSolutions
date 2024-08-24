@@ -301,6 +301,48 @@ public class Solution {
 }
 ```
 
+- Your order, please
+
+```java
+import java.util.Arrays;
+
+public class Order {
+	public static String order(String words) {
+		if (words.length() == 0) {
+			return "";
+		}
+		String[] wordList = words.split(" ");
+		int[] stringNums = new int[wordList.length];
+		int[] indexes = new int[wordList.length];
+		int index = 0;
+		for (String word : wordList) {
+			String number = "";
+			for (int i = 0; i < word.length(); i++) {
+				if (Character.isDigit(word.charAt(i))) {
+					number += word.charAt(i);
+				}
+			}
+			stringNums[index] = Integer.parseInt(number);
+			index++;
+			number = "";
+		}
+		int[] copyOfStringNums = Arrays.copyOf(stringNums, stringNums.length);
+		Arrays.sort(copyOfStringNums);
+		String[] sortedWords = new String[wordList.length];
+		for (int i = 0; i < copyOfStringNums.length; i++) {
+			for (int j = 0; j < stringNums.length; j++) {
+				if (copyOfStringNums[i] == stringNums[j]) {
+					sortedWords[i] = wordList[j];
+					break;
+				}
+			}
+		}
+		String result = String.join(" ", sortedWords);
+		return result;
+	}
+}
+```
+
 - Playing with digits
 
 ```java
