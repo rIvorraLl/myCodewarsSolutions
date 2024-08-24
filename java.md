@@ -313,7 +313,6 @@ public class Order {
 		}
 		String[] wordList = words.split(" ");
 		int[] stringNums = new int[wordList.length];
-		int[] indexes = new int[wordList.length];
 		int index = 0;
 		for (String word : wordList) {
 			String number = "";
