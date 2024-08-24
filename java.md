@@ -805,6 +805,33 @@ public class Solution{
 }
 ```
 
+- Vector Affinity
+```java
+public class Kata {
+	public static double vectorAffinity(int[] xs, int[] ys) {
+		if (xs.length == 0 || ys.length == 0) {
+			return xs.length == 0 && ys.length == 0 ? 1.0 : 0.0;
+		}
+		int[] start;
+		int[] end;
+		double affinity = 0.0;
+		if (xs.length <= ys.length) {
+			start = xs;
+			end = ys;
+		} else {
+			start = ys;
+			end = xs;
+		}
+		for (int i = 0; i < start.length; i++) {
+			if (start[i] == end[i]) {
+				affinity++;
+			}
+		}
+		return affinity / end.length;
+	}
+}
+```
+
 - Circularly Sorted Array
 
 ```java
