@@ -805,6 +805,29 @@ public class Solution{
 }
 ```
 
+- Consecutive strings
+```java
+class LongestConsec {
+    public static String longestConsec(String[] strarr, int k) {
+    	String result = "";
+    	String prov = "";
+    	if (strarr.length == 0 || k > strarr.length || k <= 0) {
+    		return result;
+    	}
+    	for (int i = 0; i < strarr.length - k + 1; i++) {
+    		for (int j = i; j < i + k; j++) {
+    			prov += strarr[j];
+    		}
+    		if (prov.length() > result.length()) {
+    			result = prov;
+    		}
+    		prov = "";
+    	}
+    	return result;
+    }
+}
+```
+
 - Vector Affinity
 ```java
 public class Kata {
