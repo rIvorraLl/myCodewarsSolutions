@@ -114,6 +114,35 @@ public class Kata {
 }
 ```
 
+- Pete the Baker
+```java
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
+
+public class PeteTheBaker {
+	public static int cakes(Map<String, Integer> recipe, Map<String, Integer> available) {
+		List<Integer> possibles = new ArrayList<Integer>();
+		for (Entry<String, Integer> item : recipe.entrySet()) {
+			if (!available.containsKey(item.getKey())) {
+				return 0;
+			} else {
+				possibles.add(available.get(item.getKey()) / item.getValue());
+
+			}
+		}
+		int result = possibles.get(0);
+		for (Integer i : possibles) {
+			if (i < result) {
+				result = i;
+			}
+		}
+		return result;
+	}
+}
+```
+
 - Simple pig latin
 
 ```java
