@@ -2415,6 +2415,21 @@ public class Backronym {
 }
 ```
 
+- Name array capping
+
+```java
+public class Kata {
+	public static String[] capMe(String[] strings) {
+		for (int i = 0; i < strings.length; i++) {
+			strings[i] = strings[i].length() > 1
+					? Character.toUpperCase(strings[i].charAt(0)) + strings[i].substring(1).toLowerCase()
+					: strings[i].toUpperCase();
+		}
+		return strings;
+	}
+}
+```
+
 - Summing a number's digits
 ```java
 public class Kata{
