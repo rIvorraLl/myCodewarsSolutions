@@ -2415,6 +2415,25 @@ public class Backronym {
 }
 ```
 
+- Summing a number's digits
+```java
+public class Kata{
+	public static int sumDigits(int number) {
+		int[] digits = new int[String.valueOf(number).length()];
+		double numberToDouble = Math.abs((double) number);
+		int result = 0;
+		int i = 0;
+		while (i < digits.length) {
+			digits[i] = ((int) numberToDouble % 10);
+			numberToDouble = numberToDouble / 10;
+			result += digits[i];
+			i++;
+		}
+		return result;
+	}
+}
+```
+
 - Remove anchor from URL
 
 ```java
