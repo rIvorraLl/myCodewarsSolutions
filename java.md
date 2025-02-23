@@ -2415,6 +2415,16 @@ public class Backronym {
 }
 ```
 
+- Remove anchor from URL
+
+```java
+public class Kata {
+    public static String removeUrlAnchor(String url) {
+      return url.split("#")[0];
+    }
+}
+```
+
 **8 kyu**
 
 - Convert a String to a Number!
