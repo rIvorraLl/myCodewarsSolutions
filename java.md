@@ -330,6 +330,58 @@ public class Solution {
 }
 ```
 
+- Find a Bunch of Common Elements of Two Lists in a Certain Range
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+class Solution {
+	static List<Integer> findCommonElements(int[] arrA, int[] arrB, int[] rng, String wanted) {
+		Set<Integer> provisionalSet = new HashSet<Integer>();
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		for (int i = 0; i < arrA.length; i++) {
+			if (isWanted(arrA[i], wanted) && isInRange(arrA[i], rng) && isDuplicate(arrA[i], arrA)) {
+				for (int j = 0; j < arrB.length; j++) {
+					if (arrA[i] == arrB[j] && isDuplicate(arrB[j], arrB)) {
+						provisionalSet.add(arrA[i]);
+						break;
+					}
+				}
+			}
+		}
+		result.addAll(provisionalSet);
+		Collections.sort(result);
+		return result;
+	}
+
+	private static boolean isWanted(int num, String wanted) {
+		final String even = "even";
+		return wanted.equals(even) ? num % 2 == 0 : num % 2 != 0;
+	}
+
+	private static boolean isInRange(int num, int[] range) {
+		return num >= range[0] && num <= range[1];
+	}
+
+	private static boolean isDuplicate(int num, int[] arr) {
+		int counter = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == num) {
+				counter++;
+				if (counter > 1) {
+					break;
+				}
+			}
+		}
+		return counter > 1;
+	}
+}
+```
+
 - Your order, please
 
 ```java
