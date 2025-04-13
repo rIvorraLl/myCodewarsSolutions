@@ -251,6 +251,44 @@ public class BitCounting {
   }
 ```
 
+- Stone bridge primes
+
+```java
+import java.util.HashSet;
+
+class Solution{
+	public static int solve(int x, int y) {
+		HashSet<Integer> candidatesSet = new HashSet<Integer>();
+		int max_m = (int) Math.floor(Math.log(y) / Math.log(2));
+		int max_n = (int) Math.floor(Math.log(y) / Math.log(3));
+		for (int m = 0; m <= max_m; m++) {
+			for (int n = 0; n <= max_n; n++) {
+				int candidate = (int) Math.pow(2, m) * (int) Math.pow(3, n) + 1;
+				if (candidate <= y && candidate >= x && isPrime(candidate)) {
+					candidatesSet.add(candidate);
+				}
+			}
+		}
+		return candidatesSet.size();
+	}
+
+	static boolean isPrime(int num) {
+		if (num <= 1)
+			return false;
+		if (num <= 3)
+			return true;
+		if (num % 2 == 0 || num % 3 == 0)
+			return false;
+		for (int i = 2; i < Math.sqrt(num) + 1; i += 1) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+```
+
 - Pair of gloves
 
 ```java
