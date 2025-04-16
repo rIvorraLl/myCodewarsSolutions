@@ -1132,6 +1132,26 @@ public class FindOutlier{
 }
 ```
 
+- Decode the Morse code
+
+```java
+public class MorseCodeDecoder {
+    public static String decode(String morseCode) {
+      morseCode = morseCode.trim();
+      String result = "";
+      String[] words = morseCode.split("   ");
+      for (int i = 0; i < words.length; i++) {
+        String[] word = words[i].split(" ");
+        for (int j = 0; j < word.length; j++) {
+          result += MorseCode.get(word[j]);
+        }
+        result += " ";
+      }
+      return result.trim();
+    }
+}
+```
+
 - Sort the odd
 ```
 import java.util.ArrayList;
