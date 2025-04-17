@@ -51,6 +51,46 @@ public class Snail {
 }
 ```
 
+- Strip Comments
+
+```java
+public class StripComments {
+
+	public static String stripComments(String text, String[] commentSymbols) {
+		String[] splStr = text.split("\n");
+		String prov = "";
+		String result = "";
+		boolean control = false;
+
+		for (int i = 0; i < splStr.length; i++) {
+			prov = "";
+			control = false;
+			for (int j = 0; j < splStr[i].length(); j++) {
+				if (!control) {
+					for (int k = 0; k < commentSymbols.length; k++) {
+						if ((splStr[i].charAt(j) + "").equals(commentSymbols[k])) {
+							control = true;
+							break;
+						}
+					}
+					if (!control) {
+						prov += splStr[i].charAt(j);
+					}
+				}
+			}
+			result += prov.replaceAll("\\s+$", "");
+			result += "\n";
+		}
+
+		if (!text.isEmpty() && text.charAt(text.length() - 1) != '\n' && result.length() > 0) {
+			result = result.substring(0, result.length() - 1);
+		}
+
+		return result;
+	}
+}
+```
+
 **5 kyu**
 
 - Gap in primes
