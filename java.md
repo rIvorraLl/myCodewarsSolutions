@@ -997,6 +997,44 @@ public class Kata
 }
 ```
 
+- Delete occurrences of an element if it occurs more than n times
+
+```java
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class EnoughIsEnough {
+
+	public static int[] deleteNth(int[] elements, int maxOccurrences) {
+		if (maxOccurrences == 0) {
+			return new int[0];
+		}
+		List<Integer> container = new ArrayList<Integer>();
+		Map<Integer, Integer> counterMap = new HashMap<Integer, Integer>();
+		for (int n : elements) {
+			if (!counterMap.containsKey(n)) {
+				counterMap.put(n, 1);
+				container.add(n);
+			}
+			else if (counterMap.get(n) < maxOccurrences) {
+				counterMap.put(n, counterMap.get(n) + 1);
+				container.add(n);
+			}
+		}
+		int[] result = new int[container.size()];
+		int index = 0;
+		for (Integer i : container) {
+			result[index] = i;
+			index++;
+		}
+		
+		return result;
+	}
+}
+```
+
 - What century is it?
 
 ```java
