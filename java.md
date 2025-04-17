@@ -1,3 +1,56 @@
+**4 kyu**
+
+- Snail
+
+```java
+public class Snail {
+
+	public static int[] snail(int[][] array) {
+		if (array == null || array.length == 0 || array[0].length == 0) {
+			return new int[0];
+		}
+
+		int size = array.length * array[0].length;
+		int[] result = new int[size];
+		int resultIndex = 0;
+		int consumed = 0;
+		int n = array.length;
+		int top = 0, bottom = n - 1, left = 0, right = n - 1;
+
+		while (consumed < size) {
+			for (int i = left; i <= right && consumed < size; i++) {
+				result[resultIndex++] = array[top][i];
+				consumed++;
+			}
+			top++;
+
+			for (int i = top; i <= bottom && consumed < size; i++) {
+				result[resultIndex++] = array[i][right];
+				consumed++;
+			}
+			right--;
+
+			if (top <= bottom) {
+				for (int i = right; i >= left && consumed < size; i--) {
+					result[resultIndex++] = array[bottom][i];
+					consumed++;
+				}
+				bottom--;
+			}
+
+			if (left <= right) {
+				for (int i = bottom; i >= top && consumed < size; i--) {
+					result[resultIndex++] = array[i][left];
+					consumed++;
+				}
+				left++;
+			}
+		}
+		return result;
+	}
+}
+```
+
 **5 kyu**
 
 - Gap in primes
