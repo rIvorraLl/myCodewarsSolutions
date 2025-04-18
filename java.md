@@ -2542,6 +2542,23 @@ class Kata {
 }
 ```
 
+- Credit Card Mask
+
+```java
+public class Maskify {
+    public static String maskify(String str) {
+    	String masked = "";
+    	if (str.length() <= 4) {
+    		return str;
+    	}
+      for (int i = 0; i < str.length() - 4; i++) {
+        masked += "#";
+      }
+      return masked + str.substring(str.length() - 4);
+    }
+}
+```
+
 - Largest pair sum in array
 
 ```java
