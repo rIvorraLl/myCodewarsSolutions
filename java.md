@@ -2134,6 +2134,32 @@ public class JadenCase {
 	}
 ```
 
+- Shortest word
+
+```java
+public class Kata {
+    public static int findShort(String s) {
+    	if (s.length() == 0) {
+    		return 0;
+    	}
+    	String[] words = s.split(" ");
+    	int wordLength = words[0].length();
+    	int charCounter = 0;
+    	for (String word : words) {
+    		char[] charArray = word.toCharArray();
+    		for (char c : charArray) {
+    			charCounter++;
+    		}
+    		if (charCounter < wordLength) {
+    			wordLength = charCounter;
+    		}
+    		charCounter = 0;
+    	}
+        return wordLength;
+    }
+}
+```
+
 - Bumps in the Road
 
 ```java
