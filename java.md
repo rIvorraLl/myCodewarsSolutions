@@ -2089,6 +2089,18 @@ public class Consonants {
 }
 ```
 
+- Sum of two lowest positive integers
+
+```java
+import java.util.Arrays;
+class Kata{
+  public static long sumTwoSmallestNumbers(long [] numbers) {
+    Arrays.sort(numbers);
+    return numbers[0] + numbers[1];
+  }             
+}
+```
+
 Jaden Casing
 ```java
 
