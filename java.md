@@ -1,7 +1,7 @@
 **4 kyu**
 
 - Snail
-- 
+
 ```java
 public class Snail {
 
