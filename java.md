@@ -997,6 +997,51 @@ public class Kata
 }
 ```
 
+- Highest Scoring Word
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class Kata {
+
+	public static String high(String s) {
+		int value = 0;
+		String result = "";
+		String[] wordsArray = s.split(" ");
+		for (String word : wordsArray) {
+			int wordValue = calculateWordValue(word);
+			if (wordValue > value) {
+				result = word;
+				value = wordValue;
+			}
+		}
+		return result;
+	}
+
+	private static Map<Character, Integer> wordValueMapBuilder() {
+		Map<Character, Integer> wordValueMap = new HashMap<Character, Integer>();
+		char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+				's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+		int value = 1;
+		for (char c : letters) {
+			wordValueMap.put(c, value);
+			value++;
+		}
+		return wordValueMap;
+	}
+	
+	private static int calculateWordValue(String s) {
+		int value = 0;
+		final Map<Character, Integer> wordValueMap = wordValueMapBuilder();
+		for (int i = 0; i < s.length(); i++) {
+			value += wordValueMap.get(s.charAt(i));
+		}
+		return value;
+	}
+}
+```
+
 - Delete occurrences of an element if it occurs more than n times
 
 ```java
