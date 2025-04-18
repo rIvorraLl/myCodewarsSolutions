@@ -2983,6 +2983,26 @@ public class Kata
  }
 ```
 
+- Enumerable Magic #25 - Take the First N Elements
+
+```java
+public class ZywOo {
+	public static int[] take(int[] arr, int n) {
+    if (arr.length == 0) {
+      return new int[0];
+    }
+    if (n >= arr.length) {
+      return arr;
+    }
+		int[] result = new int[n];
+		for (int i = 0; i < n; i++) {
+			result[i] = arr[i];
+		}
+		return result;
+	}
+}
+```
+
 - Grasshopper - Summation
 
 ```java
