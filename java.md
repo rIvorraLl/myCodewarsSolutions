@@ -312,6 +312,37 @@ public class PigLatin {
     }
 ```
 
+- Rot 13
+
+```java
+	public static String rot13(String str) {
+		String result = "";
+		String[] alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+				"s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+				"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+		boolean isLetter = false;
+		for (int i = 0; i < str.length(); i++) {
+			for (int j = 0; j < alphabet.length - 26; j++) {
+				String s = String.valueOf(str.charAt(i));
+				if (s.equals(alphabet[j].toLowerCase())) {
+					result += alphabet[j + 13];
+					isLetter = true;
+					break;
+				} else if (s.equals(alphabet[j].toUpperCase())) {
+					result += alphabet[j + 13].toUpperCase();
+					isLetter = true;
+					break;
+				}
+			}
+			if (!isLetter) {
+				result += str.charAt(i);
+			}
+			isLetter = false;
+		}
+		return result;
+	}
+```
+
 **6 kyu**
 - Bit counting
 
