@@ -2114,6 +2114,26 @@ public class JadenCase {
 }
 ```
 
+- Mumbling
+
+```java
+	public static String accum(String s) {
+		String result = "";
+		int iterations = 0;
+		for (int i = 0; i < s.length(); i++) {
+			result += String.valueOf(s.charAt(i)).toUpperCase();
+			for (int j = 0; j < iterations; j++) {
+				result += String.valueOf(s.charAt(i)).toLowerCase();
+			}
+			iterations++;
+			if (i != s.length() - 1) {
+				result += "-";
+			}
+		}
+		return result;
+	}
+```
+
 - Bumps in the Road
 
 ```java
