@@ -2023,6 +2023,27 @@ public class Spooner {
 }
 ```
 
+- Testing 1-2-3
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class LineNumbering {
+	public static List<String> number(List<String> lines) {
+		List<String> newList = new ArrayList<String>();
+		int index = 1;
+		int counter = 0;
+		for (String line : lines) {
+			newList.add(index + ": " + lines.get(counter));
+			counter++;
+      index++;
+		}
+		return newList;
+	}
+}
+```
+
 - Incrementer
 
 ```java
