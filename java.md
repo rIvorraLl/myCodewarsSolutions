@@ -3048,6 +3048,24 @@ public class ZywOo {
 }
 ```
 
+- Beginner - Reduce but Grow
+
+```java
+public class Kata {
+	public static int grow(int[] x) {
+		if (x.length == 0) {
+			return 0;
+		}
+		int result = x[0];
+		for (int i = 1; i < x.length; i++) {
+			result = result * x[i];
+		}
+		return result;
+
+	}
+}
+```
+
 - Grasshopper - Summation
 
 ```java
