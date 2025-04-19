@@ -2037,7 +2037,7 @@ public class LineNumbering {
 		for (String line : lines) {
 			newList.add(index + ": " + lines.get(counter));
 			counter++;
-      index++;
+      			index++;
 		}
 		return newList;
 	}
