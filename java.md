@@ -2069,6 +2069,30 @@ public class LineNumbering {
 }
 ```
 
+- Sum of the first nth term of Series
+
+```java
+import java.text.DecimalFormat;
+
+public class NthSeries {
+	
+	public static String seriesSum(int n) {
+		double dividend = 1.0;
+		double divisor = 1.0;
+		double sum = 0.0;
+
+		for (int i = 0; i < n; i++) {
+			sum = sum + dividend / divisor;
+			divisor += 3;
+		}
+		DecimalFormat df = new DecimalFormat("0.00");
+		String result = String.valueOf(sum);
+		result = df.format(sum);
+		return result;
+	}
+}
+```
+
 - Incrementer
 
 ```java
