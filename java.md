@@ -2203,6 +2203,26 @@ public class Kata {
 }
 ```
 
+- Money, Money, Money
+
+```java
+public class Money {
+	public static int calculateYears(double principal, double interest, double tax, double desired) {
+		if (principal == desired) {
+			return 0;
+		}
+		int years = 0;
+		while (desired > principal) {
+			double benefits = principal * interest;
+			double taxes = benefits * tax;
+			principal = principal + benefits - taxes;
+			years++;
+		}
+		return years;
+	}
+}
+```
+
 - Bumps in the Road
 
 ```java
