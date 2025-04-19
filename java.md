@@ -1817,6 +1817,31 @@ public class Kata {
       
   }
   ```
+
+- Binary addition
+
+```java
+import java.util.ArrayList;
+
+
+public class Kata{
+  
+	public static String binaryAddition(int a, int b) {
+		int sum = a + b;
+		ArrayList<Integer> digits = new ArrayList<Integer>();
+		while (sum / 2 > 0) {
+			digits.add(sum % 2);
+			sum = sum / 2;
+		}
+		digits.add(sum % 2);
+		String binaryStr = "";
+		for (int num : digits) {
+			binaryStr = String.valueOf(num) + binaryStr;
+		}
+		return binaryStr;
+	}
+}
+```
   
 - The old switcheroo
 
