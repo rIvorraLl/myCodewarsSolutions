@@ -2905,6 +2905,51 @@ public class StringToNumber {
 }
 ```
 
+- Hex to Decimal
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class Kata {
+	public static int hexToDec(final String hexString) {
+		int result = 0;
+		final int base = 16;
+		boolean isNegative = false;
+		String hex = hexString.toUpperCase();
+		Map<Character, Integer> equivalencesMap = equivalencesMap();
+		for (int i = hex.length() - 1; i >= 0; i--) {
+			if (hex.charAt(i) == '-') {
+				isNegative = true;
+			} else {
+				int exponent = hex.length() - 1 - i;
+				result += Math.pow(base, exponent) * equivalencesMap.get(hex.charAt(i));
+			}
+		}
+		if (isNegative) {
+			result = -result;
+		}
+		return result;
+	}
+
+	public static Map<Character, Integer> equivalencesMap() {
+		Map<Character, Integer> result = new HashMap<Character, Integer>();
+		char letter = 'A';
+		int num = 10;
+		for (int i = 0; i < 10; i++) {
+			char keyChar = (char) ('0' + i);
+			result.put(keyChar, i);
+		}
+		for (int i = 0; i < 6; i++) {
+			result.put(letter, num);
+			num++;
+			letter++;
+		}
+		return result;
+	}
+}
+```
+
 - Abbreviate Two Words
 
 ```java
