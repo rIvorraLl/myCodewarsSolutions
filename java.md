@@ -91,6 +91,56 @@ public class StripComments {
 }
 ```
 
+- A simplistic
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class TCP {
+
+	public static String traverseStates(String[] events) {
+		Map<String, String> stateEventMap = stateEventMapBuilder();
+		String state = "CLOSED";
+		for (String event : events) {
+			String key = state + ":" + event;
+			if (stateEventMap.containsKey(key)) {
+				state = stateEventMap.get(key);
+			} else {
+				return "ERROR";
+			}
+		}
+		return state;
+	}
+
+	private static Map<String, String> stateEventMapBuilder() {
+		Map<String, String> stateEventMap = new HashMap<String, String>();
+		stateEventMap.put("CLOSED:APP_PASSIVE_OPEN", "LISTEN");
+		stateEventMap.put("CLOSED:APP_ACTIVE_OPEN", "SYN_SENT");
+		stateEventMap.put("LISTEN:RCV_SYN", "SYN_RCVD");
+		stateEventMap.put("LISTEN:APP_SEND", "SYN_SENT");
+		stateEventMap.put("LISTEN:APP_CLOSE", "CLOSED");
+		stateEventMap.put("SYN_RCVD:APP_CLOSE", "FIN_WAIT_1");
+		stateEventMap.put("SYN_RCVD:RCV_ACK", "ESTABLISHED");
+		stateEventMap.put("SYN_SENT:RCV_SYN", "SYN_RCVD");
+		stateEventMap.put("SYN_SENT:RCV_SYN_ACK", "ESTABLISHED");
+		stateEventMap.put("SYN_SENT:APP_CLOSE", "CLOSED");
+		stateEventMap.put("ESTABLISHED:APP_CLOSE", "FIN_WAIT_1");
+		stateEventMap.put("ESTABLISHED:RCV_FIN", "CLOSE_WAIT");
+		stateEventMap.put("FIN_WAIT_1:RCV_FIN", "CLOSING");
+		stateEventMap.put("FIN_WAIT_1:RCV_FIN_ACK", "TIME_WAIT");
+		stateEventMap.put("FIN_WAIT_1:RCV_ACK", "FIN_WAIT_2");
+		stateEventMap.put("CLOSING:RCV_ACK", "TIME_WAIT");
+		stateEventMap.put("FIN_WAIT_2:RCV_FIN", "TIME_WAIT");
+		stateEventMap.put("TIME_WAIT:APP_TIMEOUT", "CLOSED");
+		stateEventMap.put("CLOSE_WAIT:APP_CLOSE", "LAST_ACK");
+		stateEventMap.put("LAST_ACK:RCV_ACK", "CLOSED");
+
+		return stateEventMap;
+	}
+}
+```
+
 **5 kyu**
 
 - Gap in primes
