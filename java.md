@@ -3077,6 +3077,18 @@ public class GrassHopper {
 }
 ```
 
+- Parse nice int from char problem
+
+```java
+public class CharProblem {
+  public static int howOld(final String herOld) {
+  char age = herOld.charAt(0);
+  return age - '0';
+  
+  }
+}
+```
+
 - Calculate BMI
 
 ```java
