@@ -91,7 +91,7 @@ public class StripComments {
 }
 ```
 
-- A simplistic
+- A Simplistic TCP Finite State Machine (FSM)
 
 ```java
 import java.util.HashMap;
