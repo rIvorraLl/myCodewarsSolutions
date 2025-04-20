@@ -2297,6 +2297,27 @@ public class JadenCase {
 	}
 ```
 
+- Fix string case
+
+```java
+public class Solution {
+	public static String solve(final String str) {
+		int lowercaseCount = countLowercaseLetters(str);
+		return lowercaseCount >= str.length() / 2 + str.length() % 2 ? str.toLowerCase() : str.toUpperCase();
+	}
+
+	private static int countLowercaseLetters(String s) {
+		int counter = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {
+				counter++;
+			}
+		}
+		return counter;
+	}
+}
+```
+
 - Shortest word
 
 ```java
