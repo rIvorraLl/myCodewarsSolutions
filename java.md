@@ -2199,6 +2199,23 @@ class Solution{
 }
 ```
 
+- Factorial
+
+```java
+public class Factorial {
+	public int factorial(int n) {
+		if (n < 0 || n > 12) {
+			throw new IllegalArgumentException();
+		}
+		int accumulator = 1;
+		for (int i = 1; i <= n; i++) {
+			accumulator *= i;
+		}
+		return accumulator;
+	}
+}
+```
+
 - Exclamation marks series #8: Move all exclamation marks to the end of the sentence
 
 ```java
