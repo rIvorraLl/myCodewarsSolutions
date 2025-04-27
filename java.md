@@ -2181,6 +2181,24 @@ public class SecondOcurrence {
 }
 ```
 
+- Alternate capitalization
+
+```java
+class Solution{
+	public static String[] capitalize(String s) {
+		String[] result = new String[2];
+		result[0] = (s.charAt(0) + "").toUpperCase();
+		result[1] = (s.charAt(0) + "").toLowerCase();
+		for (int i = 1; i < s.length(); i++) {
+			String upperCased = (s.charAt(i) + "").toUpperCase();
+			result[0] = i % 2 == 0 ? result[0] + upperCased : (result[0] + s.charAt(i));
+			result[1] = i % 2 != 0 ? result[1] + upperCased : (result[1] + s.charAt(i));
+		}
+		return result;
+	}
+}
+```
+
 - Exclamation marks series #8: Move all exclamation marks to the end of the sentence
 
 ```java
