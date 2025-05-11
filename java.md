@@ -795,6 +795,39 @@ public class CountingDuplicates {
 }
 ```
 
+- Arrh, grabscrab!
+
+```java
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+
+public class Grab {
+	public static List<String> grabscrab(String s, List<String> words) {
+		List<String> result = new ArrayList<String>();
+		HashMap<String, Integer> mappedS = mapWord(s);
+		for (String word : words) {
+			HashMap<String, Integer> mappedWord = mapWord(word);
+			if (mappedWord.equals(mappedS)) {
+				result.add(word);
+			}
+		}
+		return result;
+	}
+
+	private static HashMap<String, Integer> mapWord(String word) {
+		HashMap<String, Integer> mappedWord = new HashMap<String, Integer>();
+		for (int i = 0; i < word.length(); i++) {
+			String letter = word.charAt(i) + "";
+			Integer value = mappedWord.containsKey(letter) ? mappedWord.get(letter) + 1 : 1;
+			mappedWord.put(letter, value);
+		}
+		return mappedWord;
+	}
+}
+```
+
 - Array.diff
 
 ```java
