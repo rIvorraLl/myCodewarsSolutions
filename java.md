@@ -307,6 +307,22 @@ public class PigLatin {
 }
 ```
 
+- Mean Square Error
+
+```java
+public class Solution {
+	public static double solution(int[] arr1, int[] arr2) {
+		int[] arr3 = new int[arr1.length];
+		double total = 0;
+		for (int i = 0; i < arr1.length; i++) {
+			arr3[i] = (int) Math.pow(Math.abs(arr1[i] - arr2[i]), 2);
+			total += arr3[i];
+		}
+		return total / arr1.length;
+	}
+}
+```
+
 - Greed is Good
 
 ```java
