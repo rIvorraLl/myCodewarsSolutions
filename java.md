@@ -2042,6 +2042,33 @@ class Arge {
 }
 ```
 
+- Search for letters
+
+```java
+import java.util.HashMap;
+
+public class Letters{
+	public static String search(String line) {
+		String result = "";
+		char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+		HashMap<String, String> lettersMap = new HashMap<String, String>();
+		for (char c : alphabet) {
+			lettersMap.put(c + "", "0");
+		}
+		for (char c : line.toCharArray()) {
+			String s = (c + "").toUpperCase();
+			if (lettersMap.containsKey(s)) {
+				lettersMap.put(s, "1");
+			}
+		}
+		for (String s : lettersMap.values()) {
+			result += s;
+		}
+		return result;
+	}
+}
+```
+
 - Disemvowel Trolls
 
 ```java
