@@ -2128,6 +2128,29 @@ public class Kata {
 }
 ```
 
+- Return substring instance count
+
+```java
+public class Solution {
+	public static int substringCount(String fullText, String search) {
+		if (fullText.length() <= search.length() || search.length() == 0) {
+			return 0;
+		}
+		int counter = 0;
+		for (int i = 0; i <= fullText.length() - search.length(); i++) {
+			String substring = fullText.substring(i, i + search.length());
+			if (substring.equals(search)) {
+				counter++;
+        if (search.length() > 1) {
+				i += search.length();
+        }
+			}
+		}
+		return counter;
+	}
+}
+```
+
 - Special Number (Special Numbers Series #5)
 
 ```java
