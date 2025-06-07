@@ -2082,6 +2082,46 @@ public class Letters{
 }
 ```
 
+- Credit card issuer checker
+
+```java
+import java.util.HashMap;
+
+public class Kata {
+	public static String getIssuer(String cardNumber) {
+		final HashMap<String, String> cardMap = getCardMap();
+
+		final String cardLen = String.valueOf(cardNumber.length());
+		final String oneInitialNum = cardNumber.substring(0, 1) + cardLen;
+		final String twoInitialNum = cardNumber.substring(0, 2) + cardLen;
+		final String fourInitialNum = cardNumber.substring(0, 4) + cardLen;
+		String[] initialNums = { oneInitialNum, twoInitialNum, fourInitialNum };
+		for (String n : initialNums) {
+			if (cardMap.get(n) != null) {
+				return cardMap.get(n);
+			}
+		}
+
+		return "Unknown";
+	}
+
+	public static final HashMap<String, String> getCardMap() {
+		final HashMap<String, String> cardMap = new HashMap<>();
+		cardMap.put("3415", "AMEX");
+		cardMap.put("3715", "AMEX");
+		cardMap.put("5116", "Mastercard");
+		cardMap.put("5216", "Mastercard");
+		cardMap.put("5316", "Mastercard");
+		cardMap.put("5416", "Mastercard");
+		cardMap.put("5516", "Mastercard");
+		cardMap.put("413", "VISA");
+		cardMap.put("416", "VISA");
+		cardMap.put("601116", "Discover");
+		return cardMap;
+	}
+}
+```
+
 - Disemvowel Trolls
 
 ```java
