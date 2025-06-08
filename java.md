@@ -1171,6 +1171,31 @@ class Kata {
 }
 ```
 
+- Help the bookseller
+
+```java
+public class StockList {
+	public static String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
+		if (lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
+			return "";
+		}
+		String result = "";
+		for (String s1 : lstOf1stLetter) {
+			int totalInCat = 0;
+			for (String lA : lstOfArt) {
+				if (lA.charAt(0) == s1.charAt(0)) {
+					String[] splitted = lA.split(" ");
+					totalInCat += Integer.valueOf(splitted[1]);
+				}
+			}
+			result += "(" + s1 + " : " + totalInCat + ") - ";
+			totalInCat = 0;
+		}
+		return result.substring(0, result.length() - 3);
+	}
+}
+```
+
 - Upside down
 
 ```java
