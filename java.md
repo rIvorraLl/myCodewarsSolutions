@@ -1,5 +1,112 @@
 **4 kyu**
 
+- Vigenère cipher helper
+
+```java
+import java.util.HashMap;
+
+public class VigenereCipher {
+	private String key;
+	private String abc;
+
+	public VigenereCipher(String key, String abc) {
+		this.key = key;
+		this.abc = abc;
+	}
+
+	public String encode(String str) {
+		String result = "";
+		final HashMap<String, Integer> alphabetIndexesMap = getAlphabetIndexesMap();
+		final char[] strArr = str.toCharArray();
+		final char[] fullKey = getFullKey(this.key, str).toCharArray();
+		int i = 0;
+		for (char c : strArr) {
+			String cs = String.valueOf(c);
+			if (alphabetIndexesMap.get(cs) == null) {
+				result += cs;
+				i++;
+			} else {
+				int strIndex = alphabetIndexesMap.get(cs);
+				int keyIndex = alphabetIndexesMap.get(String.valueOf(fullKey[i]));
+				int displacement = (strIndex + keyIndex) % this.abc.length();
+				result += this.abc.charAt(displacement);
+				i++;
+			}
+
+		}
+		return result;
+	}
+
+	public String decode(String str) {
+		String result = "";
+		final HashMap<String, Integer> alphabetIndexesMap = getAlphabetIndexesMap();
+		final char[] strArr = str.toCharArray();
+		final char[] fullKey = getFullKey(this.key, str).toCharArray();
+		int i = 0;
+		for (char c : strArr) {
+			String cs = String.valueOf(c);
+			if (alphabetIndexesMap.get(cs) == null) {
+				result += cs;
+				i++;
+			} else {
+				int strIndex = alphabetIndexesMap.get(cs);
+				int keyIndex = alphabetIndexesMap.get(String.valueOf(fullKey[i]));
+				if (strIndex - keyIndex >= 0) {
+					int displacement = (strIndex - keyIndex) % this.abc.length();
+					result += this.abc.charAt(displacement);
+					i++;
+				} else {
+					int displacement = (strIndex - keyIndex + this.abc.length()) % this.abc.length();
+					result += this.abc.charAt(displacement);
+					i++;
+				}
+			}
+
+		}
+		return result;
+	}
+
+	private final HashMap<String, Integer> getAlphabetIndexesMap() {
+		HashMap<String, Integer> indexesMap = new HashMap<>();
+		Integer i = 0;
+		char[] alphabet = this.abc.toCharArray();
+		for (char c : alphabet) {
+			indexesMap.put(String.valueOf(c), i);
+			i++;
+		}
+		return indexesMap;
+	}
+
+	private final String getFullKey(String key, String str) {
+		if (str.length() <= this.key.length()) {
+			return key;
+		}
+		String result = "";
+		int repeats = str.length() / this.key.length() + 1;
+		for (int i = 0; i < repeats; i++) {
+			result += this.key;
+		}
+		return result.substring(0, str.length());
+	}
+
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public String getAbc() {
+		return abc;
+	}
+
+	public void setAbc(String abc) {
+		this.abc = abc;
+	}
+}
+```
+
 - Snail
 
 ```java
