@@ -1171,7 +1171,7 @@ class Kata {
 }
 ```
 
-- Help the bookseller
+- Help the bookseller!
 
 ```java
 public class StockList {
