@@ -951,6 +951,37 @@ public class Grab {
 }
 ```
 
+- Srot the inner ctonnet in dsnnieedcg oredr
+
+```java
+import java.util.Arrays;
+import java.util.Collections;
+
+public class SortTheInnerContent {
+	public static String sortTheInnerContent(String words) {
+		String[] wordsToArr = words.split(" ");
+		String[] innerSortedArr = Arrays.stream(wordsToArr).map(w -> {
+			if (w.length() > 3) {
+				return sortInner(w);
+			} else {
+				return w;
+			}
+		}).toArray(String[]::new);
+
+		return String.join(" ", innerSortedArr);
+	}
+
+	private static String sortInner(String word) {
+		String substring = word.substring(1, word.length() - 1);
+		String[] substrArr = substring.split("");
+		Arrays.sort(substrArr, Collections.reverseOrder());
+		String sortedSubstr = String.join("", substrArr);
+		return word.charAt(0) + sortedSubstr + word.charAt(word.length() - 1);
+	}
+}
+
+```
+
 - Array.diff
 
 ```java
