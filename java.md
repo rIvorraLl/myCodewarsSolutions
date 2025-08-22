@@ -2185,6 +2185,21 @@ public class LeapYears {
 }
 ```
 
+- Is valid identifier?
+
+```java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class IdentifierChecker {
+	public static boolean isValid(String idn) {
+		Pattern pattern = Pattern.compile("^[A-Za-z\\$\\_][A-Za-z\\$\\_\\d]*$");
+		Matcher matcher = pattern.matcher(idn);
+		return matcher.find();
+	}
+}
+```
+
 - List Filtering
 
 ```java
