@@ -2224,6 +2224,17 @@ public class LeapYears {
 }
 ```
 
+- Figurate Numbers #2 - Pronic Number
+
+```java
+public class Pronic {
+	public static boolean isPronic(int n) {
+		int pow = (int) Math.sqrt((double) n);
+		return (pow - 1) * pow == n || pow * (pow + 1) == n ? true : false;
+	}
+}
+```
+
 - Is valid identifier?
 
 ```java
