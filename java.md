@@ -586,6 +586,45 @@ class Solution{
 }
 ```
 
+- Simple prime streaming
+
+```java
+public class SimplePrimeStreaming {
+    public static String solve(int a, int b) {
+        return primesString(a, b).substring(a, (a + b)); //..
+    }
+    
+    private static String primesString(int index, int positions) {
+    	String result = "";
+    	int i = 2;
+    	boolean condition = false;
+    	while (!condition) {
+    		if (isPrime(i)) {
+    			result += i;
+    		}
+    		i++;
+    		if (result.length() >= (index + positions)) {
+    			condition = true;    			
+    		}
+    	}
+    	return result;
+    }
+    
+	private static boolean isPrime(int num) {
+		if (num <= 3)
+			return true;
+		if (num % 2 == 0 || num % 3 == 0)
+			return false;
+		for (int i = 2; i < Math.sqrt(num) + 1; i += 1) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+```
+
 - Pair of gloves
 
 ```java
