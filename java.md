@@ -661,6 +661,58 @@ class Kata {
 }
 ```
 
+- Follow that Spy
+
+```java
+public class Routes {
+	public String findRoutes(String[][] routes) {
+		String[] origins = setSubList(routes, 0);
+		String[] destinations = setSubList(routes, 1);
+		String[] resultArr = new String[routes.length + 1];
+		int index = 1;
+		String route = startingPoint(origins, destinations);
+		resultArr[0] = route;
+		while (index < resultArr.length) {
+			for (int i = 0; i < origins.length; i++) {
+				if (origins[i].equals(route)) {
+					resultArr[index] = destinations[i];
+					route = destinations[i];
+					index++;
+				}
+			}
+		}
+		return String.join(", ", resultArr);
+	}
+
+	private String[] setSubList(String[][] routes, int index) {
+		String[] result = new String[routes.length];
+		for (int i = 0; i < routes.length; i++) {
+			result[i] = routes[i][index];
+		}
+		return result;
+	}
+
+	private String startingPoint(String[] origins, String[] destinations) {
+		boolean isOrigin = true;
+		String result = "";
+		for (int i = 0; i < origins.length; i++) {
+			for (int j = 0; j < destinations.length; j++) {
+				if (origins[i].equals(destinations[j])) {
+					isOrigin = false;
+				}
+			}
+			if (isOrigin) {
+				result = origins[i];
+				break;
+			} else {
+				isOrigin = true;
+			}
+		}
+		return result;
+	}
+}
+```
+
 - Convert ISBN-10 to ISBN-13
 
 ```java
