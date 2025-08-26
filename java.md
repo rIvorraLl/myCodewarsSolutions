@@ -1073,6 +1073,39 @@ public class SortTheInnerContent {
 
 ```
 
+- Word a10n (abbreviation)
+
+```java
+public class Abbreviator {
+
+	public String abbreviate(String string) {
+		String result = "";
+		String word = "";
+		boolean isLongerThanOne = false;
+		for (int i = 0; i < string.length(); i++) {
+			if (Character.isLetter(string.charAt(i))) {
+				word += string.charAt(i);
+			} else {
+				isLongerThanOne = true;
+				result += transform(word) + string.charAt(i);
+				word = "";
+			}
+		}
+		if (Character.isLetter(string.charAt(string.length() - 1))) {
+			result += transform(word);
+		}
+		return isLongerThanOne ? result : transform(word);
+	}
+
+	public String transform(String word) {
+		return (word.length() >= 4)
+				? "" + word.charAt(0) + word.substring(1, word.length() - 1).length() + word.charAt(word.length() - 1)
+				: word;
+	}
+
+}
+```
+
 - Array.diff
 
 ```java
