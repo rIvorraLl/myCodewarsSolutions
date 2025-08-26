@@ -1152,6 +1152,31 @@ public class Multiplication{
 }
 ```
 
+- Message Validator
+
+```java
+public class Kata {
+	public static boolean isAValidMessage(String message) {
+		if (message.length() == 0 || message.equals("0")) {
+			return true;
+		}
+		String[] substrings = message.split("(?<=\\d)(?=\\D)|(?<=\\D)(?=\\d)");
+		try {
+			for (int i = 0; i < substrings.length; i++) {
+				if (i == 0 || i % 2 == 0) {
+					if (Integer.valueOf(substrings[i]) != substrings[i + 1].length()) {
+						return false;
+					}
+				}
+			}
+		} catch (IndexOutOfBoundsException | NumberFormatException e) {
+			return false;
+		}
+		return true;
+	}
+}
+```
+
 - Mexican Wave
 
 ```java
