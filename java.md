@@ -2889,6 +2889,31 @@ public class Money {
 }
 ```
 
+- Plus - minus - plus - plus - ... - Count
+
+```java
+public class PlusMinusPlus {
+	public static int signChange(int[] arr) {
+		if (arr.length == 0) {
+			return 0;
+		}
+		String sign = getSign(arr[0]);
+		int counter = 0;
+		for (int n : arr) {
+			if (!getSign(n).equals(sign)) {
+				counter++;
+				sign = getSign(n);
+			}
+		}
+		return counter;
+	}
+
+	private static String getSign(int n) {
+		return n >= 0 ? "+" : "-";
+	}
+}
+```
+
 - Bumps in the Road
 
 ```java
