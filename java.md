@@ -3567,6 +3567,18 @@ public class Kata{
 }
 ```
 
+- Odd or Even?
+
+```java
+import java.util.Arrays;
+
+public class Codewars {
+  public static String oddOrEven(int[] array) {
+    return Arrays.stream(array).sum() % 2 == 0 ? "even" : "odd";
+  }
+}
+```
+
 - Remove anchor from URL
 
 ```java
