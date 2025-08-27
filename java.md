@@ -2843,6 +2843,39 @@ public class Solution {
 }
 ```
 
+- Simple letter removal
+
+```java
+public class SimpleLetterRemoval {
+	public static String solve(String s, int k) {
+		if (s.length() <= k) {
+			return "";
+		}
+		return String.join("", removeLetters(s, k));
+	}
+
+	private static String removeLetters(String s, int k) {
+		String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+		int alphabetIndex = 0;
+		String[] sArr = s.split("");
+		while (k > 0) {
+			for (int i = 0; i < s.length(); i++) {
+				if (sArr[i].equals(alphabet[alphabetIndex])) {
+					sArr[i] = "";
+					k--;
+				}
+				if (k == 0) {
+					break;
+				}
+
+			}
+			alphabetIndex++;
+		}
+		return String.join("", sArr);
+	}
+}
+```
+
 - Shortest word
 
 ```java
