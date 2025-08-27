@@ -2266,6 +2266,31 @@ public class Kata{
 	}
 }
 ```
+
+- EAN Validation
+```java
+public class EANValidator {
+	public static boolean validate(final String eanCode) {
+		long multiplied = getMultiplied(Long.valueOf(eanCode));
+		long lastDigit = Long.valueOf(eanCode) % 10;
+		return multiplied % 10 == 0 && lastDigit == 0
+				|| multiplied % 10 != 0 && (long) (10 - (multiplied % 10)) == lastDigit;
+	}
+
+	private static Long getMultiplied(Long eanCode) {
+		Long num = (eanCode / 10);
+		long sum = 0;
+		boolean isEven = true;
+		while (num > 0) {
+			sum = sum + (isEven ? (num % 10) * 3 : (num % 10) * 1);
+			isEven = !isEven;
+			num = num / 10;
+		}
+
+		return sum;
+	}
+}
+```
   
 - The old switcheroo
 
