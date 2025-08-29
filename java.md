@@ -625,6 +625,37 @@ public class SimplePrimeStreaming {
 }
 ```
 
+- Sum of prime-indexed elements
+
+```java
+class Solution{
+	public static int solve(int[] arr) {
+		int result = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (isPrime(i)) {
+				result += arr[i];
+			}
+		}
+		return result;
+	}
+
+	static boolean isPrime(int num) {
+		if (num <= 1)
+			return false;
+		if (num <= 3)
+			return true;
+		if (num % 2 == 0 || num % 3 == 0)
+			return false;
+		for (int i = 2; i < Math.sqrt(num) + 1; i += 1) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}  
+}
+```
+
 - Pair of gloves
 
 ```java
