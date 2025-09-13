@@ -1366,6 +1366,33 @@ public class MexicanWave {
   }
 ```
 
+- Simple string indices
+
+```java
+public class Indice {
+
+	public static int solve(String str, int index) {
+		if (str.charAt(index) != '(') {
+			return -1;
+		}
+		String substr = str.substring(index + 1, str.length());
+		int closingBrackets = 0;
+		for (int i = 0; i < substr.length(); i++) {
+			if (substr.charAt(i) == '(') {
+				closingBrackets++;
+			} else if (substr.charAt(i) == ')') {
+				if (closingBrackets == 0) {
+					return i + str.length() - substr.length();
+				} else {
+					closingBrackets--;
+				}
+			}
+		}
+		return -1;
+	}
+}
+```
+
 - Sum of parts
 
 ```java
