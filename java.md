@@ -158,6 +158,35 @@ public class Snail {
 }
 ```
 
+- Most frequently used words in a text
+
+```java
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class TopWords {
+
+	public static List<String> top3(String s) {
+		if (s == null || s.trim().isEmpty()) {
+			return new ArrayList<>();
+		}
+		HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
+		String[] wordArr = s.split("[^a-zA-Z']++");
+		for (String st : wordArr) {
+			if (!st.trim().isEmpty() && st.matches(".*[a-zA-Z].*")) {
+				wordMap.put(st.toLowerCase(),
+						wordMap.get(st.toLowerCase()) != null ? wordMap.get(st.toLowerCase()) + 1 : 1);
+			}
+		}
+		return wordMap.entrySet().stream().sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue())).limit(3)
+				.map(Map.Entry::getKey).collect(Collectors.toList());
+	}
+}
+```
+
 - Strip Comments
 
 ```java
