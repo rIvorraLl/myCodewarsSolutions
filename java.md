@@ -393,6 +393,86 @@ public class Kata {
 }
 ```
 
+- The Road-Kill Detective
+
+```java
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
+public class Dinglemouse {
+
+	private static String[] getSortedAnimals() {
+		return Arrays.stream(Preloaded.ANIMALS).sorted(Comparator.comparingInt(String::length).reversed())
+				.toArray(String[]::new);
+	}
+
+	public static String roadKill(final String photo) {
+		String[] photoParts = photo.split("=+");
+		String cleanedPhoto = Arrays.stream(photoParts).filter(s -> !s.isEmpty()).collect(Collectors.joining());
+
+		for (String animal : getSortedAnimals()) {
+			if (compare(animal, cleanedPhoto)) {
+				return animal;
+			}
+
+			String reversedAnimal = new StringBuilder(animal).reverse().toString();
+			if (compare(reversedAnimal, cleanedPhoto)) {
+				return animal;
+			}
+		}
+		return "??";
+	}
+
+	private static boolean compare(String animal, String cleanedPhoto) {
+		int currentPhotoIndex = 0;
+		int lastMatchIndex = -1;
+
+		for (int i = 0; i < animal.length(); i++) {
+			char requiredChar = animal.charAt(i);
+			boolean charFound = false;
+
+			while (currentPhotoIndex < cleanedPhoto.length()) {
+				char photoChar = cleanedPhoto.charAt(currentPhotoIndex);
+
+				if (!Character.isAlphabetic(photoChar)) {
+					return false;
+				}
+
+				if (requiredChar == photoChar) {
+					lastMatchIndex = currentPhotoIndex;
+					currentPhotoIndex++;
+					charFound = true;
+					break;
+				}
+
+				currentPhotoIndex++;
+			}
+
+			if (!charFound) {
+				return false;
+			}
+		}
+
+		if (currentPhotoIndex == cleanedPhoto.length()) {
+			return true;
+		}
+
+		char lastMatchedChar = cleanedPhoto.charAt(lastMatchIndex);
+
+		for (int i = currentPhotoIndex; i < cleanedPhoto.length(); i++) {
+			char leftoverChar = cleanedPhoto.charAt(i);
+
+			if (Character.isAlphabetic(leftoverChar) && leftoverChar != lastMatchedChar) {
+				return false;
+			}
+
+		}
+		return true;
+	}
+}
+```
+
 - Pete the Baker
 ```java
 import java.util.Map;
