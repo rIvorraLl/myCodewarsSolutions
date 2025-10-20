@@ -2515,6 +2515,32 @@ public class Kata {
 }
 ```
 
+- Sum of array singles
+
+```java
+class Solution{
+	public static int repeats(int[] arr) {
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			boolean isToSum = !appearsTwice(arr, i);
+			if (isToSum) {
+				sum += arr[i];
+			}
+		}
+		return sum;
+	}
+
+	private static boolean appearsTwice(int[] arr, int index) {
+		for (int i = 0; i < arr.length; i++) {
+			if (i != index && arr[i] == arr[index]) {
+				return true;
+			}
+		}
+		return false;
+	}
+}
+```
+
 - Leap Years
 
 ```java
