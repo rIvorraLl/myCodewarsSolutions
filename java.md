@@ -801,6 +801,28 @@ class Kata {
 }
 ```
 
+- Sentence Calculator
+
+```java
+public class SentenceCalculator {
+	public static int lettersToNumbers(String s) {
+		return s.chars()
+			.filter(c -> Character.isLetterOrDigit(c))
+			.map(c -> SentenceCalculator.getCharValue((char) c))
+			.sum();
+	}
+
+	private static int getCharValue(char c) {
+		if (Character.isDigit(c)) {
+			return Character.getNumericValue(c);
+		} else if (Character.isUpperCase(c)) {
+			return (c - 64) * 2;
+		} else {
+			return (c - 96);
+		}
+	}
+}
+```
 - Follow that Spy
 
 ```java
