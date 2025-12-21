@@ -2574,6 +2574,26 @@ public class LeapYears {
 }
 ```
 
+- String Scramble
+
+```java
+import java.util.stream.IntStream;
+
+public class StringScramble {
+
+	public static String scramble(String str, int[] indices) {
+		char[] charArr = new char[str.length()];
+
+		IntStream.range(0, str.length()).forEach(i -> {
+			int targetIndex = indices[i];
+			char character = str.charAt(i);
+			charArr[targetIndex] = character;
+		});
+
+		return new String(charArr);
+	}
+}
+```
 - Figurate Numbers #2 - Pronic Number
 
 ```java
