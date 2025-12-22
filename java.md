@@ -1399,6 +1399,28 @@ public class Multiplication{
 }
 ```
 
+- Backspaces in string
+
+```java
+import java.util.ArrayList;
+
+public class BackspacesInString {
+	public static String cleanString(String s) {
+		ArrayList<String> nonHashChars = new ArrayList<String>();
+		String[] stringChars = s.split("");
+		for (String c : stringChars) {
+			if (!c.equals("#")) {
+				nonHashChars.add(c);
+			} else {
+				if (!nonHashChars.isEmpty()) {
+					nonHashChars.remove(nonHashChars.size() - 1);
+				}
+			}
+		}
+		return String.join("", nonHashChars);
+	}
+}
+```
 - Message Validator
 
 ```java
