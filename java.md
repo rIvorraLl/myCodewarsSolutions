@@ -473,6 +473,27 @@ public class Dinglemouse {
 }
 ```
 
+- First non-repeating character
+
+```java
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Kata {
+    public static String firstNonRepeatingLetter(String s) {
+        Map<Character, Long> counts = s.toLowerCase().chars()
+            .mapToObj(i -> (char) i)
+            .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+
+        return s.chars()
+            .mapToObj(i -> (char) i)
+            .filter(c -> counts.get(Character.toLowerCase(c)) == 1)
+            .map(String::valueOf)
+            .findFirst()
+            .orElse("");
+    }
+}
+```
 - Pete the Baker
 ```java
 import java.util.Map;
