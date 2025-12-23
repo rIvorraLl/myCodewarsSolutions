@@ -1421,6 +1421,7 @@ public class BackspacesInString {
 	}
 }
 ```
+
 - Message Validator
 
 ```java
@@ -1446,6 +1447,32 @@ public class Kata {
 }
 ```
 
+- Spanish DNI Validation Algorithm
+
+```java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class DocumentValidator {
+    private static final String LETTERS = "TRWAGMYFPDXBNJZSQVHLCKE";
+    private static final Pattern DNI_PATTERN = Pattern.compile("^\\d{8}[A-Z]$");
+
+    public static boolean isValid(String document) {
+        if (document == null) {
+            return false;
+        }
+        if (!DNI_PATTERN.matcher(document).matches()) {
+            return false;
+        }
+
+        int numericPart = Integer.parseInt(document.substring(0, 8));
+        char expectedLetter = LETTERS.charAt(numericPart % 23);
+        char providedLetter = document.charAt(8);
+
+        return expectedLetter == providedLetter;
+    }
+}
+```
 - Mexican Wave
 
 ```java
