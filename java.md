@@ -1345,6 +1345,42 @@ public class Abbreviator {
 }
 ```
 
+- Brute Force Detector
+
+```java
+package codewars;
+
+import java.util.*;
+
+public class BruteForceDetector {
+	public static List<String> detectBruteForce(String[] logs) {
+		List<String> result = getIps(logs);
+		Collections.sort(result);
+		return result;
+	}
+
+	private static List<String> getIps(String[] logs) {
+		List<String> result = new ArrayList<String>();
+		HashMap<String, Integer> ips = new HashMap<>();
+		for (String log : logs) {
+			String[] logArr = log.split(" ");
+			if (!ips.containsKey(logArr[0])) {
+				ips.put(logArr[0], 0);
+			}
+			if (logArr[1].equals("LOGIN_FAIL")) {
+				ips.replace(logArr[0], ips.get(logArr[0]) + 1);
+			} else if (logArr[1].equals("LOGIN_SUCCESS")) {
+				ips.replace(logArr[0], 0);
+			}
+			if (ips.get(logArr[0]) >= 3 && !result.contains(logArr[0])) {
+				result.add(logArr[0]);
+			}
+		}
+		return result;
+	}
+}
+```
+
 - Array.diff
 
 ```java
