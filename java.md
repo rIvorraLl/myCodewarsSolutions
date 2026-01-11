@@ -991,6 +991,62 @@ class Solution {
 }
 ```
 
+- Progress of a challenge
+```java
+package codewars;
+
+import java.util.Arrays;
+
+public class Challenge {
+	public static String checkChallenge(int pledged, int current, String month) {
+		if (current >= pledged) {
+			return "Challenge is completed.";
+		}
+		String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
+				"October", "November", "December" };
+		int monthNum = Arrays.asList(months).indexOf(month);
+		int[] monthlyGoalArr = monthlyGoal(pledged);
+		int goalSoFar = goalSoFar(monthlyGoalArr, monthNum);
+		int diff = current - goalSoFar;
+		if (diff == 0) {
+			return "You are on track.";
+		} else if (diff > 0) {
+			return "You are " + diff + " ahead of schedule.";
+		} else {
+			return "You are " + Math.abs(diff) + " behind schedule.";
+		}
+	}
+
+	private static int[] monthlyGoal(int pledged) {
+		int[] monthlyAmount = new int[12];
+		int goal = pledged / 12;
+		int remainder = pledged % 12;
+		if (pledged >= 12) {
+			int j = 0;
+			for (int n : monthlyAmount) {
+				monthlyAmount[j] = goal;
+				j++;
+			}
+		}
+		int i = 0;
+		while (remainder > 0) {
+			monthlyAmount[i]++;
+			remainder--;
+			i++;
+		}
+		return monthlyAmount;
+	}
+
+	private static int goalSoFar(int[] monthlyGoalArr, int monthsCount) {
+		int sum = 0;
+		for (int i = 0; i < monthsCount; i++) {
+			sum += monthlyGoalArr[i];
+		}
+		return sum;
+	}
+}
+```
+
 - Your order, please
 
 ```java
