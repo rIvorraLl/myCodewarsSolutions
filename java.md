@@ -473,6 +473,66 @@ public class Dinglemouse {
 }
 ```
 
+- The Hunger Games - Zoo Disaster!
+
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Dinglemouse {
+    public static String[] whoEatsWho(final String zoo) {
+        ArrayList<String> resultList = new ArrayList<String>();
+        resultList.add(zoo);
+        String[] zooElementsArr = zoo.split(",");
+        ArrayList<String> zooElementsList = new ArrayList<String>(Arrays.asList(zooElementsArr));
+        HashMap<String, String[]> zooElementsMap = animalEats();
+        
+        int index = 0;
+        while (index < zooElementsList.size()) {
+            String current = zooElementsList.get(index);
+            String[] toEat = zooElementsMap.get(current);
+            if (toEat != null && index > 0 && isElementPresent(toEat, zooElementsList.get(index - 1))) {
+                resultList.add(current + " eats " + zooElementsList.get(index - 1));
+                zooElementsList.remove(index - 1);
+                index = 0;
+            } 
+            else if (toEat != null && index < zooElementsList.size() - 1 && isElementPresent(toEat, zooElementsList.get(index + 1))) {
+                resultList.add(current + " eats " + zooElementsList.get(index + 1));
+                zooElementsList.remove(index + 1);
+                index = 0;
+            } 
+            else {
+                index++;
+            }
+        }
+        resultList.add(String.join(",", zooElementsList));
+        return resultList.toArray(new String[0]);
+    }
+
+    private static boolean isElementPresent(String[] arr, String key) {
+        for (String s : arr) if (s.equals(key)) return true;
+        return false;
+    }
+
+    private static HashMap<String, String[]> animalEats() {
+        HashMap<String, String[]> animalEatsMap = new HashMap<String, String[]>();
+        animalEatsMap.put("antelope", new String[] { "grass" });
+        animalEatsMap.put("big-fish", new String[] { "little-fish" });
+        animalEatsMap.put("bug", new String[] { "leaves" });
+        animalEatsMap.put("bear", new String[] { "big-fish", "bug", "chicken", "cow", "leaves", "sheep" });
+        animalEatsMap.put("chicken", new String[] { "bug" });
+        animalEatsMap.put("cow", new String[] { "grass" });
+        animalEatsMap.put("fox", new String[] { "chicken", "sheep" });
+        animalEatsMap.put("giraffe", new String[] { "leaves" });
+        animalEatsMap.put("lion", new String[] { "antelope", "cow" });
+        animalEatsMap.put("panda", new String[] { "leaves" });
+        animalEatsMap.put("sheep", new String[] { "grass" });
+        return animalEatsMap;
+    }
+}
+```
+
 - First non-repeating character
 
 ```java
