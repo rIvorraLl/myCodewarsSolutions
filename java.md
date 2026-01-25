@@ -2822,6 +2822,18 @@ public class LeapYears {
 }
 ```
 
+- Simple String Reversal II
+
+```java
+	public static String solve(String s, int a, int b) {
+		b = b < s.length() - 1 ? b : s.length() - 1;
+		String start = s.substring(0, a);
+		String middle = s.substring(a, b + 1);
+		String end = s.substring(b + 1);
+		return start + new StringBuilder(middle).reverse().toString() + end;
+	}
+```
+
 - String Scramble
 
 ```java
