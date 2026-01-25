@@ -678,6 +678,48 @@ public class BitCounting {
   }
 ```
 
+- Pure odd digit primes
+
+```java
+import java.util.stream.LongStream;
+
+public class OddDigPrime {
+
+	public static long[] onlyOddDigPrimes(long n) {
+		long[] result = new long[3];
+		result[0] = LongStream.rangeClosed(3, n)
+				.filter(i -> hasOnlyOddDigits(i))
+				.filter(i -> isPrime(i))
+				.count();
+		result[1] = LongStream.iterate(n, i -> i >= 3, i -> i - 1)
+				.filter(i -> hasOnlyOddDigits(i))
+			    .filter(val -> isPrime(val))
+			    .findFirst()
+			    .orElse(-1);
+		result[2] = LongStream.iterate(n + 1, i -> i + 1)
+				.filter(i -> hasOnlyOddDigits(i))
+			    .filter(val -> isPrime(val))
+			    .findFirst()
+			    .orElse(-1);
+		return result;
+	}
+
+	public static Boolean isPrime(long number) {	    
+	    if (number % 2 == 0) return false;
+		long limit = (long) Math.sqrt(number);
+		return LongStream.rangeClosed(3, limit)
+				.filter( i -> i % 2 != 0)
+				.noneMatch(i -> number % i == 0);
+	}
+	
+	public static boolean hasOnlyOddDigits(long number) {
+	    return String.valueOf(number).chars()
+	                 .map(Character::getNumericValue)
+	                 .allMatch(digit -> digit % 2 != 0);
+	}
+}
+```
+
 - Stone bridge primes
 
 ```java
