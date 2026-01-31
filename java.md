@@ -1329,6 +1329,50 @@ public class Solution {
 }
 ```
 
+- Take a Number And Sum Its Digits Raised To The Consecutive Powers And ....¡Eureka!!
+
+```java
+package codewars;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class SumDigPower {
+
+	public static List<Long> sumDigPow(long a, long b) {
+		List<Long> result = new ArrayList<Long>();
+		for (long i = a; i <= b; i++) {
+			if (i <= 9) {
+				result.add(i);
+			} else {
+				long[] digits = getDigits(i);
+				long sum = 0;
+				for (long j = 0; j < digits.length; j++) {
+					sum += Math.pow(digits[(int) (j)], j + 1);
+				}
+				if (sum == i) {
+					result.add(i);
+				}
+
+			}
+		}
+		return result;
+	}
+
+	private static long[] getDigits(long i) {
+		int len = String.valueOf(i).length();
+		long[] digits = new long[len];
+		int index = len - 1;
+		while (i > 0) {
+			digits[index] = i % 10;
+			i = i / 10;
+			index -= 1;
+		}
+		return digits;
+	}
+}
+```
+
 - Playing with passphrases
 
 ```java
