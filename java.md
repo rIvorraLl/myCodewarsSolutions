@@ -110,8 +110,6 @@ public class VigenereCipher {
 - Strings mix
 
 ```java
-package codewars;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
