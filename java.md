@@ -616,6 +616,30 @@ public class Kata {
     }
 }
 ```
+
+- Product of consecutive Fib numbers
+```java
+public class ProdFib {
+
+	public static long[] productFib(long prod) {
+		long start = 0;
+		long end = 1;
+		long next = 1;
+		while (start * end < prod) {
+			next = start + end;
+			if (end * next == prod) {
+				long[] found = { end, next, 1 };
+				return found;
+			}
+			start = end;
+			end = next;
+		}
+		long[] notFound = { start, end, 0 };
+		return notFound;
+	}
+}
+```
+
 - Pete the Baker
 ```java
 import java.util.Map;
