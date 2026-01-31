@@ -107,6 +107,70 @@ public class VigenereCipher {
 }
 ```
 
+- Strings mix
+
+```java
+package codewars;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Mixing {
+
+	public static String mix(String s1, String s2) {
+		HashMap<String, Integer> s1Map = lettersCountMap(s1);
+		HashMap<String, Integer> s2Map = lettersCountMap(s2);
+		List<String> items = compare(s1Map, s2Map);
+		return items.stream()
+	        .sorted(Comparator
+	        .comparing(String::length, Comparator.reverseOrder())
+	        .thenComparing(Comparator.naturalOrder()))
+	        .collect(Collectors.joining("/"));
+		
+	}	
+	private static HashMap<String, Integer> lettersCountMap(String s) {
+		HashMap<String, Integer> sMap = new HashMap<String, Integer>();
+		s.chars()
+			.filter(Character::isLowerCase)
+			.mapToObj(c -> (char) c)
+			.map(String::valueOf)
+			.forEach(c -> {
+				if (!sMap.containsKey(c)) {
+					 sMap.put(c, 1);
+				}
+				else {
+					sMap.put(c, sMap.get(c) + 1);
+				}
+			});
+		sMap.entrySet().removeIf(entry -> entry.getValue() < 2);
+		return sMap;
+	}
+	
+	private static List<String> compare(HashMap<String, Integer> a, HashMap<String, Integer> b) {
+		ArrayList<String> result = new ArrayList<String>();
+		HashSet<String> keys = new HashSet<String>(a.keySet());
+		keys.addAll(b.keySet());
+		keys.stream()
+			.forEach(key -> {
+				int val1 = a.getOrDefault(key, 0);
+				int val2 = b.getOrDefault(key, 0);
+				if (val1 > val2) {
+					result.add("1:" + key.repeat(val1));
+				} else if (val1 < val2) {
+					result.add("2:" + key.repeat(val2));
+				} else {
+					result.add("=:" + key.repeat(val1));
+				}
+			});
+		return result;
+	}
+}
+```
+
 - Snail
 
 ```java
