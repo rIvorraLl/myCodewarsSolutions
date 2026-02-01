@@ -640,6 +640,52 @@ public class ProdFib {
 }
 ```
 
+- Integers: Recreation One
+```java
+package codewars;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
+
+public class SumSquaredDivisors {
+
+	public static String listSquared(long m, long n) {
+		StringJoiner sj = new StringJoiner(", ");
+
+		for (long i = m; i <= n; i++) {
+			long sum = sumOfSquaredDivisors(i);
+
+			if (isPerfectSquare(sum)) {
+				sj.add("[" + i + ", " + sum + "]");
+			}
+		}
+		return "[" + sj.toString() + "]";
+	}
+
+	private static long sumOfSquaredDivisors(long n) {
+		long sum = 0;
+		for (long i = 1; i * i <= n; i++) {
+			if (n % i == 0) {
+				sum += i * i;
+				if (i != n / i) {
+					long other = n / i;
+					sum += other * other;
+				}
+			}
+		}
+		return sum;
+	}
+
+	private static boolean isPerfectSquare(long n) {
+		if (n < 0)
+			return false;
+		long root = (long) Math.round(Math.sqrt(n));
+		return root * root == n;
+	}
+}
+```
+
 - Pete the Baker
 ```java
 import java.util.Map;
