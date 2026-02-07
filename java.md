@@ -616,6 +616,39 @@ public class Kata {
     }
 }
 ```
+- Pick peaks
+```java
+package codewars;
+
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class PickPeaks {
+	public static Map<String, List<Integer>> getPeaks(int[] arr) {
+		Map<String, List<Integer>> result = new HashMap<>();
+		List<Integer> positions = new ArrayList<>();
+		List<Integer> peaks = new ArrayList<>();
+		int candidatePos = -1;
+
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] > arr[i - 1]) {
+				candidatePos = i;
+			} else if (arr[i] < arr[i - 1]) {
+				if (candidatePos != -1) {
+					positions.add(candidatePos);
+					peaks.add(arr[candidatePos]);
+					candidatePos = -1;
+				}
+			}
+		}
+		result.put("pos", positions);
+		result.put("peaks", peaks);
+		return result;
+	}
+}
+```
 
 - Product of consecutive Fib numbers
 ```java
