@@ -1530,6 +1530,34 @@ public class PlayPass {
 }
 ```
 
+- Encrypt this!
+
+```java
+public class Kata {
+	public static String encryptThis(String text) {
+		if (text.length() == 0) return "";
+		String[] words = text.split(" ");
+		int i = 0;
+		for (String word : words) {
+			int firstPart = (int) word.charAt(0);
+			if (word.length() == 1) {
+				words[i] = "" + firstPart;
+			} else if (word.length() == 2) {
+				char lastPart = word.charAt(word.length() - 1);
+				words[i] = "" + firstPart + lastPart;
+			} else {
+				words[i] = "" + firstPart + word.charAt(word.length() - 1) + word.substring(2, word.length() - 1)
+						+ word.charAt(1);
+			}
+			i++;
+
+		}
+		return String.join(" ", words);
+
+	}
+}
+```
+
 - Counting duplicates
 
 ```java
