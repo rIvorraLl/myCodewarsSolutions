@@ -2941,6 +2941,25 @@ public class Kata{
 }
 ```
 
+- Ones and Zeros
+```java
+import java.util.List;
+
+public class BinaryArrayToNumber {
+
+    public static int ConvertBinaryArrayToInt(List<Integer> binary) {
+    	int result = 0;
+    	int exp = 0;
+    	for (int i = binary.size() -1; i >= 0; i--) {
+    		result += binary.get(i) * Math.pow(2, exp);
+    		exp++;
+    		
+    	}
+		return result;
+    }
+}
+```
+
 - EAN Validation
 ```java
 public class EANValidator {
