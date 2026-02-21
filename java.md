@@ -3078,6 +3078,26 @@ public class LeapYears {
 }
 ```
 
+- Sum of numbers from 0 to n
+
+```java
+public class SequenceSum {
+
+	public static String showSequence(int value) {
+		if (value == 0)
+			return "0=0";
+		if (value < 0)
+			return value + "<0";
+		StringBuilder sb = new StringBuilder();
+		int sum = value * (value + 1) / 2;
+		for (int i = 0; i < value; i++) {
+			sb.append(i).append("+");
+		}
+		return sb.append(value).append(" = ").append(sum).toString();
+	}
+}
+'''
+
 - Friend or Foe?
 
 ```java
