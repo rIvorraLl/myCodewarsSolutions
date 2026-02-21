@@ -3096,7 +3096,7 @@ public class SequenceSum {
 		return sb.append(value).append(" = ").append(sum).toString();
 	}
 }
-'''
+```
 
 - Friend or Foe?
 
