@@ -3290,6 +3290,16 @@ public class Letters{
 }
 ```
 
+- Love vs friendship
+
+```java
+public class LoveVsFriendship {
+	public static int wordsToMarks(String text) {
+		return text.chars().map(c -> c - 96).sum();
+	}
+}
+```
+
 - Credit card issuer checker
 
 ```java
