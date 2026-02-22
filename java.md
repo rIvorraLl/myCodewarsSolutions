@@ -3098,6 +3098,36 @@ public class SequenceSum {
 }
 ```
 
+- Will there be enough space?
+
+```java
+public class Remover {
+
+	public static int[] removeSmallest(int[] numbers) {
+		if (numbers.equals(null) || numbers.length <= 1) {
+			return new int[0];
+		}
+		int[] numbersWithoutMin = new int[numbers.length - 1];
+		int min = numbers[0];
+		int minIndex = 0;
+		for (int i = 1; i < numbers.length; i++) {
+			if (numbers[i] < min) {
+				minIndex = i;
+				min = numbers[i];
+			}
+		}
+		int minArrIndex = 0;
+		for (int j = 0; j < numbers.length; j++) {
+			if (j != minIndex) {
+				numbersWithoutMin[minArrIndex] = numbers[j];
+				minArrIndex++;
+			}
+		}
+		return numbersWithoutMin;
+	}
+}
+```
+
 - Friend or Foe?
 
 ```java
