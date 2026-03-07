@@ -3430,6 +3430,22 @@ public class Solution {
 }
 ```
 
+- Greet Me
+```java
+public class GreetMe {
+	public static String greet(String name) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Hello ");
+		String firstNameLetter = String.valueOf(name.charAt(0));
+		sb.append(firstNameLetter.toUpperCase());
+		String firstNameLeft = name.substring(1, name.length());
+		sb.append(firstNameLeft.toLowerCase());
+		sb.append("!");
+		return sb.toString();
+	}
+}
+```
+
 - Special Number (Special Numbers Series #5)
 
 ```java
