@@ -3365,6 +3365,27 @@ public class Troll {
 }
 ```
 
+- Even numbers in an array
+
+```java
+public class Kata{
+	public static int[] evenNumbers(int[] arr, int n) {
+		int[] result = new int[n];
+		int index = n - 1;
+		for (int i = arr.length - 1; i >= 0; i--) {
+			while (index >= 0) {
+				if (arr[i] % 2 == 0) {
+					result[index] = arr[i];
+					index--;
+				}
+				break;
+			}
+		}
+		return result;
+	}
+}
+```
+
 - Nth Smallest Element (Array Series #4)
 
 ```java
