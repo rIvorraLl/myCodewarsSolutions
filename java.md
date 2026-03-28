@@ -3078,6 +3078,19 @@ public class LeapYears {
 }
 ```
 
+- Center of the Matrix
+
+```java
+public class Kata {
+	public static Integer center(int[][] matrix) {
+		if (matrix.length % 2 == 0 || matrix[0].length % 2 == 0 || matrix.length == 0)
+			return null;
+
+		return matrix[matrix.length / 2][matrix[0].length / 2];
+	}
+}
+```
+
 - Sum of numbers from 0 to n
 
 ```java
