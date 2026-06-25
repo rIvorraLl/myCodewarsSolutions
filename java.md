@@ -3466,6 +3466,29 @@ public class Kata {
 }
 ```
 
+- Caffeine Script
+
+```java
+public class CaffeineBuzz {
+
+    public static String caffeineBuzz(int n) {
+        String result = "";
+        boolean hasCondition = false;
+        if (n % 4 == 0 && n % 3 == 0) {
+            result = "Coffee";
+            hasCondition = true;
+        } else if (n % 3 == 0) {
+            result = "Java";
+            hasCondition = true;
+        }
+        if (result.length() > 0 && n % 2 == 0) {
+            result += "Script";
+        }
+        return hasCondition ? result : "mocha_missing!";
+    }
+}
+```
+
 - Return substring instance count
 
 ```java
