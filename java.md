@@ -3440,6 +3440,32 @@ public class Drinkin {
 }
 ```
 
+- Find Count of Most Frequent Item in an Array
+
+```java
+import java.util.HashMap;
+
+public class Kata {
+	public static int mostFrequentItemCount(int[] collection) {
+		if (collection.length == 0) return 0;
+		int result = 1;
+		HashMap<Integer, Integer> numsMap = new HashMap<>();
+		for (int num : collection) {
+			if (!numsMap.containsKey(num)) {
+				numsMap.put(num, 1);
+			} else {
+				int total = numsMap.get(num);
+				numsMap.put(num, total + 1);
+				if (total + 1 > result) {
+					result = total + 1;
+				}
+			}
+		}
+		return result;
+	}
+}
+```
+
 - Return substring instance count
 
 ```java
