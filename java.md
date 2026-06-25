@@ -3420,6 +3420,26 @@ public class Kata {
 }
 ```
 
+- Responsible Drinkin
+
+```java
+import java.util.Arrays;
+
+public class Drinkin {
+    public String hydrate(String drinkString) {
+    	String[] arr = drinkString.split(" ");
+    	int numbers = Arrays.stream(arr)
+    			.filter(drink -> {
+    				return drink != null && drink.matches("\\d+");
+    			})
+    			.mapToInt(Integer::parseInt)
+    			.sum();
+    	if (numbers == 1) return "1 glass of water";
+    	return String.format("%d glasses of water", numbers);
+    }
+}
+```
+
 - Return substring instance count
 
 ```java
